@@ -28,24 +28,72 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            ElevatedButton(
-              onPressed: () => _onWorkoutSelected('Chest'),
-              child: const Text('Chest Workouts'),
+            GestureDetector(
+              onTap: () => _onWorkoutSelected('Chest'),
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 94, 115, 92),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: const Text(
+                  'Chest Workouts',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0), fontSize: 16.0),
+                ),
+              ),
             ),
             const SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () => _onWorkoutSelected('Back'),
-              child: const Text('Back Workouts'),
+            GestureDetector(
+              onTap: () => _onWorkoutSelected('Back'),
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 104, 108, 150),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: const Text(
+                  'Back Workouts',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0), fontSize: 16.0),
+                ),
+              ),
             ),
             const SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () => _onWorkoutSelected('Arms'),
-              child: const Text('Arm Workouts'),
+            GestureDetector(
+              onTap: () => _onWorkoutSelected('Arms'),
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 67, 108, 109),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: const Text(
+                  'Arm Workouts',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0), fontSize: 16.0),
+                ),
+              ),
             ),
             const SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () => _onWorkoutSelected('Legs'),
-              child: const Text('Leg Workouts'),
+            GestureDetector(
+              onTap: () => _onWorkoutSelected('Legs'),
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 114, 94, 65),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: const Text(
+                  'Leg Workouts',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0), fontSize: 16.0),
+                ),
+              ),
             ),
           ],
         ),
