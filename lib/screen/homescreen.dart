@@ -2,6 +2,7 @@ import 'package:fitnessapp/screen/bmi_index_calculator.dart';
 import 'package:flutter/material.dart';
 import 'protein_calculator_screen.dart';
 import 'gym_workouts.dart';
+import 'fun_fact_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -78,9 +79,14 @@ class HomeScreen extends StatelessWidget {
               title: 'Fun Facts',
               description: 'Interesting facts about gym, fitness, and health',
               onTap: () {
-                // Navigate to Fun Facts screen
-              },
-            ),
+                // Navigasi ke halaman Fun Facts
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FunFactsScreen()),  // Arahkan ke FunFactsScreen
+              );
+            },
+          ),
+
             HomeFeatureTile(
               icon: Icons.person,
               title: 'User Profile',
