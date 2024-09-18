@@ -48,7 +48,7 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
             TextField(
               controller: _weightController,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Weight (kg)',
                 border: OutlineInputBorder(),
               ),
@@ -57,7 +57,7 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
             TextField(
               controller: _proteinPerKgController,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Protein per kg (g)',
                 border: OutlineInputBorder(),
               ),
