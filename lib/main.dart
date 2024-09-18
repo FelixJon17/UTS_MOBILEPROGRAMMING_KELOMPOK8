@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'protein_calculator_screen.dart'; 
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            // Login Button
+            // Login Button 
             HomeFeatureTile(
               icon: Icons.login,
               title: 'Login',
@@ -40,7 +41,12 @@ class HomeScreen extends StatelessWidget {
               icon: Icons.local_dining,
               title: 'Daily Protein Calculator',
               description: 'Calculate your daily protein needs based on weight',
-              onTap: () {
+              onTap: () { Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProteinCalculatorScreen(),
+                  ),
+                  );
                 // Navigate to Daily Protein Calculator screen
               },
             ),
