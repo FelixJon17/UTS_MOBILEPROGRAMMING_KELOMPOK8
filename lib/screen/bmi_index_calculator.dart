@@ -47,7 +47,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
       appBar: AppBar(
         title: const Text('BMI Calculator'),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -82,6 +82,110 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+            const SizedBox(height: 24.0),
+            const Text(
+              'BMI Index Table:',
+              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16.0),
+            Table(
+              border: TableBorder.all(color: Colors.black),
+              children: const [
+                TableRow(
+                  decoration: BoxDecoration(color: Colors.grey),
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'BMI Range',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Category',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '< 18.5',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Underweight',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '18.5 - 24.9',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Normal weight',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '25 - 29.9',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Overweight',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '≥ 30',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Obesity',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
