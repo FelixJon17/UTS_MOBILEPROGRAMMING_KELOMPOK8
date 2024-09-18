@@ -4,7 +4,8 @@ class ProteinCalculatorScreen extends StatefulWidget {
   const ProteinCalculatorScreen({super.key});
 
   @override
-  _ProteinCalculatorScreenState createState() => _ProteinCalculatorScreenState();
+  _ProteinCalculatorScreenState createState() =>
+      _ProteinCalculatorScreenState();
 }
 
 class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
@@ -14,7 +15,8 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
 
   void _calculateProtein() {
     final double weight = double.tryParse(_weightController.text) ?? 0;
-    final double proteinPerKg = double.tryParse(_proteinPerKgController.text) ?? 0;
+    final double proteinPerKg =
+        double.tryParse(_proteinPerKgController.text) ?? 0;
 
     if (weight <= 0 || proteinPerKg <= 0) {
       setState(() {
@@ -26,7 +28,8 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
     final double totalProtein = weight * proteinPerKg;
 
     setState(() {
-      _result = 'Total Daily Protein Requirement: ${totalProtein.toStringAsFixed(2)} grams';
+      _result =
+          'Total Daily Protein Requirement: ${totalProtein.toStringAsFixed(2)} grams';
     });
   }
 
