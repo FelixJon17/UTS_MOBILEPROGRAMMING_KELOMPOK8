@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'protein_calculator_screen.dart';
+import 'gym_workouts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -29,7 +30,12 @@ class HomeScreen extends StatelessWidget {
               description:
                   'Guides for chest, back, arms, shoulders, and legs workouts',
               onTap: () {
-                // Navigate to GYM Workouts screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const GymWorkoutsScreen(),
+                  ),
+                );
               },
             ),
             HomeFeatureTile(
