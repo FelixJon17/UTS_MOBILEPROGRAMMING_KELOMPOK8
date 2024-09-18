@@ -21,7 +21,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('GYM Workouts'),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: const Color.fromARGB(255, 116, 122, 133),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -30,22 +30,22 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
           children: [
             ElevatedButton(
               onPressed: () => _onWorkoutSelected('Chest'),
-              child: const Text('Workout Chest'),
+              child: const Text('Chest Workouts'),
             ),
             const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () => _onWorkoutSelected('Back'),
-              child: const Text('Workout Back'),
+              child: const Text('Back Workouts'),
             ),
             const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () => _onWorkoutSelected('Arms'),
-              child: const Text('Workout Arms'),
+              child: const Text('Arm Workouts'),
             ),
             const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () => _onWorkoutSelected('Legs'),
-              child: const Text('Workout Legs'),
+              child: const Text('Leg Workouts'),
             ),
           ],
         ),
