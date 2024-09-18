@@ -1,3 +1,4 @@
+import 'package:fitnessapp/screen/bmi_index_calculator.dart';
 import 'package:flutter/material.dart';
 import 'protein_calculator_screen.dart';
 import 'gym_workouts.dart';
@@ -56,7 +57,12 @@ class HomeScreen extends StatelessWidget {
               title: 'BMI Calculator',
               description: 'Calculate your BMI and check your weight category',
               onTap: () {
-                // Navigate to BMI Calculator screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BMICalculatorScreen(),
+                  ),
+                );
               },
             ),
             HomeFeatureTile(
