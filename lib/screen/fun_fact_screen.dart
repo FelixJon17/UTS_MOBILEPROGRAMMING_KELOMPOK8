@@ -15,18 +15,18 @@ class FunFactsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Fun Facts'),
+        title: const Text('Fun Facts'),
       ),
       body: ListView.builder(
         itemCount: funFacts.length,
         itemBuilder: (context, index) {
           return Card(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: Padding(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               child: Text(
                 funFacts[index],
-                style: TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 18),
               ),
             ),
           );
