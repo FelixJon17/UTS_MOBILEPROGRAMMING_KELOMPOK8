@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fitness App Home'),
+        title: const Text('Mobile Fitness Home'),
         backgroundColor: const Color.fromARGB(255, 116, 122, 133),
       ),
       body: Padding(
