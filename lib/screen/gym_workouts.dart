@@ -25,78 +25,78 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: ListView(
           children: [
-            GestureDetector(
-              onTap: () => _onWorkoutSelected('Chest'),
-              child: Container(
-                padding: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 94, 115, 92),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: const Text(
-                  'Chest Workouts',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0), fontSize: 16.0),
-                ),
-              ),
+            HomeFeatureTile(
+              icon: Icons.fitness_center,
+              title: 'Chest Workouts',
+              description: 'Trains upper, middle, and lower chest',
+              onTap: () {
+                _onWorkoutSelected('Chest');
+                // Navigate to chest workouts
+              },
             ),
-            const SizedBox(height: 16.0),
-            GestureDetector(
-              onTap: () => _onWorkoutSelected('Back'),
-              child: Container(
-                padding: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 104, 108, 150),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: const Text(
-                  'Back Workouts',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0), fontSize: 16.0),
-                ),
-              ),
+            HomeFeatureTile(
+              icon: Icons.fitness_center,
+              title: 'Back Workouts',
+              description: 'Trains upper, middle, and lower back',
+              onTap: () {
+                _onWorkoutSelected('Back');
+                // Navigate to back workouts
+              },
             ),
-            const SizedBox(height: 16.0),
-            GestureDetector(
-              onTap: () => _onWorkoutSelected('Arms'),
-              child: Container(
-                padding: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 67, 108, 109),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: const Text(
-                  'Arm Workouts',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0), fontSize: 16.0),
-                ),
-              ),
+            HomeFeatureTile(
+              icon: Icons.fitness_center,
+              title: 'Arm Workouts',
+              description: 'Trains biceps, triceps, and forearms',
+              onTap: () {
+                _onWorkoutSelected('Arms');
+                // Navigate to arm workouts
+              },
             ),
-            const SizedBox(height: 16.0),
-            GestureDetector(
-              onTap: () => _onWorkoutSelected('Legs'),
-              child: Container(
-                padding: const EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 114, 94, 65),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: const Text(
-                  'Leg Workouts',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0), fontSize: 16.0),
-                ),
-              ),
+            HomeFeatureTile(
+              icon: Icons.fitness_center,
+              title: 'Leg Workouts',
+              description: 'Trains quads, hamstrings, and calves',
+              onTap: () {
+                _onWorkoutSelected('Legs');
+                // Navigate to leg workouts
+              },
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class HomeFeatureTile extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String description;
+  final VoidCallback onTap;
+
+  const HomeFeatureTile({
+    super.key,
+    required this.icon,
+    required this.title,
+    required this.description,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4,
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: ListTile(
+        leading: Icon(icon, size: 40, color: Colors.blueAccent),
+        title: Text(
+          title,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+        subtitle: Text(description),
+        onTap: onTap,
       ),
     );
   }
