@@ -193,9 +193,3 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
     );
   }
 }
-
-void main() {
-  runApp(const MaterialApp(
-    home: BMICalculatorScreen(),
-  ));
-}

@@ -1,4 +1,5 @@
 import 'package:fitnessapp/screen/bmi_index_calculator.dart';
+import 'package:fitnessapp/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'protein_calculator_screen.dart';
 import 'gym_workouts.dart';
@@ -82,17 +83,22 @@ class HomeScreen extends StatelessWidget {
                 // Navigasi ke halaman Fun Facts
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => FunFactsScreen()),  // Arahkan ke FunFactsScreen
-              );
-            },
-          ),
-
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          FunFactsScreen()), // Arahkan ke FunFactsScreen
+                );
+              },
+            ),
             HomeFeatureTile(
               icon: Icons.person,
               title: 'User Profile',
               description: 'View and edit your personal information',
               onTap: () {
-                // Navigate to User Profile screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const UserProfileScreen()),
+                );
               },
             ),
           ],

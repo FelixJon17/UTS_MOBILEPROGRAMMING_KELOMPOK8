@@ -1,22 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Fitness App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: FunFactsScreen(),
-    );
-  }
-}
-
 class FunFactsScreen extends StatelessWidget {
   final List<String> funFacts = [
     '1. Always warm up before starting your workout to prevent injuries.',
