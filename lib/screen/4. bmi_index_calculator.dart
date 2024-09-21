@@ -171,6 +171,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                 style: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 48, 45, 45),
                 ),
               ),
             ),

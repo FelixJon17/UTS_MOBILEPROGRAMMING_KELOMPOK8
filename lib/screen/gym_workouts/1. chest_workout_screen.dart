@@ -1,26 +1,16 @@
+import 'package:fitnessapp/screen/gym_workouts/1.%20chest_workout/1.%20upper_chest_screen.dart';
+import 'package:fitnessapp/screen/gym_workouts/1.%20chest_workout/2.%20middle_chest_screen.dart';
+import 'package:fitnessapp/screen/gym_workouts/1.%20chest_workout/3.%20lower_chest_screen.dart';
 import 'package:flutter/material.dart';
 
-class GymWorkoutsScreen extends StatefulWidget {
-  const GymWorkoutsScreen({super.key});
-
-  @override
-  GymWorkoutsScreenState createState() => GymWorkoutsScreenState();
-}
-
-class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
-  void _onWorkoutSelected(String workoutType) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('$workoutType workout selected!'),
-      ),
-    );
-  }
+class ChestWorkoutsScreen extends StatelessWidget {
+  const ChestWorkoutsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('GYM Workouts'),
+        title: const Text('Chest Workouts'),
         backgroundColor: const Color.fromARGB(255, 116, 122, 133),
       ),
       body: Padding(
@@ -29,38 +19,41 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
           children: [
             HomeFeatureTile(
               icon: Icons.fitness_center,
-              title: 'Chest Workouts',
-              description: 'Trains upper, middle, and lower chest',
+              title: 'Upper Chest',
+              description: 'Targets the upper chest',
               onTap: () {
-                _onWorkoutSelected('Chest');
-                // Navigate to chest workouts
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const UpperChestScreen(),
+                  ),
+                );
               },
             ),
             HomeFeatureTile(
               icon: Icons.fitness_center,
-              title: 'Back Workouts',
-              description: 'Trains upper, middle, and lower back',
+              title: 'Middle Chest',
+              description: 'Targets the middle chest',
               onTap: () {
-                _onWorkoutSelected('Back');
-                // Navigate to back workouts
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MiddleChestScreen(),
+                  ),
+                );
               },
             ),
             HomeFeatureTile(
               icon: Icons.fitness_center,
-              title: 'Arm Workouts',
-              description: 'Trains biceps, triceps, and forearms',
+              title: 'Lower Chest',
+              description: 'Targets the lower chest',
               onTap: () {
-                _onWorkoutSelected('Arms');
-                // Navigate to arm workouts
-              },
-            ),
-            HomeFeatureTile(
-              icon: Icons.fitness_center,
-              title: 'Leg Workouts',
-              description: 'Trains quads, hamstrings, and calves',
-              onTap: () {
-                _onWorkoutSelected('Legs');
-                // Navigate to leg workouts
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LowerChestScreen(),
+                  ),
+                );
               },
             ),
           ],

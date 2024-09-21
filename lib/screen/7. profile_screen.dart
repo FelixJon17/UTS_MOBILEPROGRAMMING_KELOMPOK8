@@ -14,7 +14,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
 
-  // Function to load user data from SharedPreferences
+  // load data user
   Future<void> _loadUserData() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -25,7 +25,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     });
   }
 
-  // Function to save user data into SharedPreferences
+  // save data user
   Future<void> _saveUserData() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('userName', _nameController.text);
@@ -33,7 +33,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     await prefs.setString('userHeight', _heightController.text);
     await prefs.setString('userWeight', _weightController.text);
 
-    // Show a message after saving data
+    // Menampilkan pesan
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Profile data saved!')),
     );
@@ -42,7 +42,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   @override
   void initState() {
     super.initState();
-    _loadUserData(); // Load saved data when the screen initializes
+    _loadUserData(); 
   }
 
   @override

@@ -1,9 +1,9 @@
-import 'package:fitnessapp/screen/bmi_index_calculator.dart';
-import 'package:fitnessapp/screen/profile_screen.dart';
+import 'package:fitnessapp/screen/4.%20bmi_index_calculator.dart';
+import 'package:fitnessapp/screen/7.%20profile_screen.dart';
 import 'package:flutter/material.dart';
-import 'protein_calculator_screen.dart';
-import 'gym_workouts.dart';
-import 'fun_fact_screen.dart';
+import '3. protein_calculator_screen.dart';
+import '2. gym_workouts.dart';
+import '6. fun_fact_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
