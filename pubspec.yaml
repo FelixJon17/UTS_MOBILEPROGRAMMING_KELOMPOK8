@@ -71,6 +71,7 @@ flutter:
     - assets/img/on_2.png
     - assets/img/on_3.png
     - assets/img/on_4.png
+    - assets/img/cardib/cycling.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

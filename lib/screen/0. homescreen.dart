@@ -1,5 +1,6 @@
 import 'package:fitnessapp/screen/4.%20bmi_index_calculator.dart';
 import 'package:fitnessapp/screen/7.%20profile_screen.dart';
+import 'package:fitnessapp/screen/5.%20cardio_workout_screen.dart';
 import 'package:flutter/material.dart';
 import '3. protein_calculator_screen.dart';
 import '2. gym_workouts.dart';
@@ -72,7 +73,12 @@ class HomeScreen extends StatelessWidget {
               title: 'Cardio Exercise',
               description: 'Running, cycling, and jogging workouts',
               onTap: () {
-                // Navigate to Cardio Exercise screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CardioExerciseScreen(),
+                  ),
+                );
               },
             ),
             HomeFeatureTile(
