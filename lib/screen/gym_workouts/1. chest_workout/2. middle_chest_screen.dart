@@ -23,7 +23,7 @@ class MiddleChestScreen extends StatelessWidget {
               description: '4 x 12 reps',
             ),
             MiddleChestTile(
-              title: 'Chest Fly',
+              title: 'Machine Fly',
               description: '4 x 12 reps',
             ),
             MiddleChestTile(
