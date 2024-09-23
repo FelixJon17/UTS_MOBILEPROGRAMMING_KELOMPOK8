@@ -71,7 +71,18 @@ flutter:
     - assets/img/on_2.png
     - assets/img/on_3.png
     - assets/img/on_4.png
-    - assets/img/cardib/cycling.gif
+    - assets/img/cardio/cycling.gif
+    - assets/img/arm/bicep-curls.gif
+    - assets/img/arm/tricep-pushdown.gif
+    - assets/img/back/barbell-bent-over-row.gif
+    - assets/img/back/wide-grip-lat-pulldown.gif
+    - assets/img/chest/barbell-bench-press.gif
+    - assets/img/chest/barbell-decline-bench-press.gif
+    - assets/img/chest/barbell-incline-bench-press.gif
+    - assets/img/leg/barbell-deadlift-movement.gif
+    - assets/img/leg/barbell-full-squat.gif
+    - assets/img/leg/leg-extension.gif
+    - assets/img/leg/leg-press.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
