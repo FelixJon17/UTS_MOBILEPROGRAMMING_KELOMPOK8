@@ -1,3 +1,4 @@
+import 'package:fitnessapp/screen/1.%20login_screen.dart';
 import 'package:fitnessapp/screen/4.%20bmi_index_calculator.dart';
 import 'package:fitnessapp/screen/7.%20profile_screen.dart';
 import 'package:fitnessapp/screen/5.%20cardio_workout_screen.dart';
@@ -25,7 +26,12 @@ class HomeScreen extends StatelessWidget {
               title: 'Login',
               description: 'Login to your account with name and email',
               onTap: () {
-                // Navigate to login screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginScreen(),
+                  ),
+                );
               },
             ),
             HomeFeatureTile(
