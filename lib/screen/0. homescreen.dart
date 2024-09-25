@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mobile Fitness Home'),
-        backgroundColor: const Color.fromARGB(255, 116, 122, 133),
+        
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

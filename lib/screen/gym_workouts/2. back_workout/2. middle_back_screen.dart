@@ -13,7 +13,19 @@ class MiddleBackScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
-          children: const [],
+          children: const [  MiddleBackTile(
+              title: 'Burbell Bent Over Row',
+              description: '4 x 12 reps',
+            ), MiddleBackTile(
+              title: 'Chest Supported Row',
+              description: '4 x 8 reps',
+            ), MiddleBackTile(
+              title: 'Seated Cable Row',
+              description: '3 x 12 reps',
+            ), MiddleBackTile(
+              title: 'Bodyweight Rows',
+              description: '4 x 12 reps',
+            ),],
         ),
       ),
     );

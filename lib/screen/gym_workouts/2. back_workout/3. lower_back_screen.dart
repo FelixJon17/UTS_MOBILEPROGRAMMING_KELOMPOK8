@@ -13,7 +13,19 @@ class LowerBackScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
-          children: const [],
+          children: const [LowerBackTile(
+              title: 'Deadlift',
+              description: '3 x 5 reps',
+            ), LowerBackTile(
+              title: 'Romanian Deadlift',
+              description: '3 x 8 reps',
+            ), LowerBackTile(
+              title: 'Kettlebell Swing',
+              description: '4 x 12 reps',
+            ), LowerBackTile(
+              title: 'Good Morning',
+              description: '2 x 12 reps',
+            ),],
         ),
       ),
     );

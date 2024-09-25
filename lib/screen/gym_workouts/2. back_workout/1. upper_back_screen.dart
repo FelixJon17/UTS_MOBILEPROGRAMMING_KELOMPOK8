@@ -17,6 +17,15 @@ class UpperBackScreen extends StatelessWidget {
             UpperBackTile(
               title: 'Shrugs',
               description: '4 x 12 reps',
+            ), UpperBackTile(
+              title: 'One Arm Dumbbell Row',
+              description: '4 x 12 reps',
+            ), UpperBackTile(
+              title: 'Bent Over Row',
+              description: '4 x 12 reps',
+            ), UpperBackTile(
+              title: 'Bent Over Dumbbell Row',
+              description: '4 x 12 reps',
             ),
           ],
         ),
