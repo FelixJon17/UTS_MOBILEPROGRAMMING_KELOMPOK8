@@ -59,6 +59,20 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
             ),
             HomeFeatureTile(
               icon: Icons.fitness_center,
+              title: 'Shoulder Workouts',
+              description: 'Trains front, lateral, and rear delts',
+              onTap: () {
+                _onWorkoutSelected('Back');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ShoulderWorkoutsScreen(),
+                  ),
+                );
+              },
+            ),
+            HomeFeatureTile(
+              icon: Icons.fitness_center,
               title: 'Arm Workouts',
               description: 'Trains biceps, triceps, and forearms',
               onTap: () {
