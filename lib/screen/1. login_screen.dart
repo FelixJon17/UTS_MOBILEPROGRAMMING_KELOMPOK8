@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import '0. homescreen.dart'; // Correct import path for HomeScreen
-import '1.1 signup.dart'; // Correct import path for SignUpScreen
+import '0. homescreen.dart';
+import '1.1 signup.dart';
+import 'user_state.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Controllers for the TextFields
     final TextEditingController _usernameController = TextEditingController();
     final TextEditingController _passwordController = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
-        backgroundColor:
-            Colors.blue, // Set background color of the AppBar to blue
+        backgroundColor: Colors.blue,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
@@ -35,38 +34,39 @@ class LoginScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 40),
-
-              // TextField for Username
               TextField(
                 controller: _usernameController,
                 decoration: const InputDecoration(
                   labelText: 'Username',
-                  border:
-                      OutlineInputBorder(), // Adding border to the TextField
+                  border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 20),
-
-              // TextField for Password
               TextField(
                 controller: _passwordController,
                 decoration: const InputDecoration(
                   labelText: 'Password',
-                  border:
-                      OutlineInputBorder(), // Adding border to the TextField
+                  border: OutlineInputBorder(),
                 ),
                 obscureText: true,
               ),
               const SizedBox(height: 30),
-
-              // Login Button
               ElevatedButton(
                 onPressed: () {
-                  // Handle login logic
+                  if (UserState.isLoggedIn) {
+                    // already logged in message
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                          content: Text('You are already logged in!')),
+                    );
+                    return;
+                  }
+
                   final String username = _usernameController.text;
                   final String password = _passwordController.text;
 
                   if (username.isNotEmpty && password.isNotEmpty) {
+                    UserState.isLoggedIn = true;
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
@@ -77,7 +77,6 @@ class LoginScreen extends StatelessWidget {
                       const SnackBar(content: Text('Successfully logged in!')),
                     );
                   } else {
-                    // Show error message if fields are empty
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Please fill all fields')),
                     );
@@ -86,8 +85,6 @@ class LoginScreen extends StatelessWidget {
                 child: const Text('Login'),
               ),
               const SizedBox(height: 20),
-
-              // Navigate to Sign Up screen
               TextButton(
                 onPressed: () {
                   Navigator.push(

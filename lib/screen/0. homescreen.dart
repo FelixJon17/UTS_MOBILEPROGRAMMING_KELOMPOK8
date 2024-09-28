@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '3. protein_calculator_screen.dart';
 import '2. gym_workouts.dart';
 import '6. fun_fact_screen.dart';
+import 'user_state.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,15 +24,20 @@ class HomeScreen extends StatelessWidget {
             HomeFeatureTile(
               icon: Icons.login,
               title: 'Login',
-              description: 'Login to your account with name and email',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginScreen(),
-                  ),
-                );
-              },
+              description: UserState.isLoggedIn
+                  ? 'You are already logged in'
+                  : 'Login to your account with name and email',
+              onTap: UserState.isLoggedIn
+                  ? null //
+                  : () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
+                    },
+              isEnabled: !UserState.isLoggedIn,
             ),
             HomeFeatureTile(
               icon: Icons.fitness_center,
@@ -91,12 +97,9 @@ class HomeScreen extends StatelessWidget {
               title: 'Fun Facts',
               description: 'Interesting facts about gym, fitness, and health',
               onTap: () {
-                // Navigasi ke halaman Fun Facts
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          FunFactsScreen()), // Arahkan ke FunFactsScreen
+                  MaterialPageRoute(builder: (context) => FunFactsScreen()),
                 );
               },
             ),
@@ -123,14 +126,16 @@ class HomeFeatureTile extends StatelessWidget {
   final IconData icon;
   final String title;
   final String description;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
+  final bool isEnabled;
 
   const HomeFeatureTile({
     super.key,
     required this.icon,
     required this.title,
     required this.description,
-    required this.onTap,
+    this.onTap,
+    this.isEnabled = true,
   });
 
   @override
@@ -145,7 +150,8 @@ class HomeFeatureTile extends StatelessWidget {
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         subtitle: Text(description),
-        onTap: onTap,
+        onTap: isEnabled ? onTap : null,
+        tileColor: isEnabled ? null : Colors.grey.shade300,
       ),
     );
   }
