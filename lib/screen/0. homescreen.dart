@@ -15,7 +15,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mobile Fitness Home'),
-        
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
