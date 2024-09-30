@@ -1,5 +1,5 @@
-import 'package:fitnessapp/screen/gym_workouts/1.%20chest_workout_screen.dart';
-import 'package:fitnessapp/screen/gym_workouts/2.%20back_workout_screen.dart';
+import 'package:fitnessapp/screen/gym_workouts/1.chest_workout_screen.dart';
+import 'package:fitnessapp/screen/gym_workouts/2.back_workout_screen.dart';
 import 'package:flutter/material.dart';
 
 class GymWorkoutsScreen extends StatefulWidget {
