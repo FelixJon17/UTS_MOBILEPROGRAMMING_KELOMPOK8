@@ -77,7 +77,6 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
               description: 'Trains biceps, triceps, and forearms',
               onTap: () {
                 _onWorkoutSelected('Arms');
-                // Navigate to arm workouts
               },
             ),
             HomeFeatureTile(
