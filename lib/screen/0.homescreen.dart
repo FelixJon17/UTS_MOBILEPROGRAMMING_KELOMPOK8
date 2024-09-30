@@ -37,37 +37,21 @@ class _HomeScreenState extends State<HomeScreen> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/icons/workouts_icon.png',
-              width: 24, // Set the width and height to match icon size
-              height: 24,
-            ),
+            icon: Icon(Icons.fitness_center),
             label: 'Workouts',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/icons/protein_icon.png',
-              width: 24,
-              height: 24,
-            ),
+            icon: Icon(Icons.local_dining),
             label: 'Protein Calc',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/img/bg/bmi.jpg',
-              width: 24,
-              height: 24,
-            ),
+            icon: Icon(Icons.monitor_weight),
             label: 'BMI',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/icons/profile_icon.png',
-              width: 24,
-              height: 24,
-            ),
+            icon: Icon(Icons.person),
             label: 'Profile',
           ),
         ],

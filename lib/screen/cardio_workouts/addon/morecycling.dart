@@ -10,13 +10,13 @@ class LearnMoreCyclingScreen extends StatelessWidget {
         title: const Text('Learn More: Cycling'),
         backgroundColor: Colors.blueAccent,
       ),
-      body: SingleChildScrollView( 
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              'assets/img/cardib/cycling.gif',
+              'assets/img/cardio/cycling.gif',
               height: 200,
               fit: BoxFit.cover,
             ),
