@@ -54,6 +54,19 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             HomeFeatureTile(
+              icon: Icons.directions_run,
+              title: 'Cardio Exercise',
+              description: 'Running, cycling, and jogging workouts',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CardioExerciseScreen(),
+                  ),
+                );
+              },
+            ),
+            HomeFeatureTile(
               icon: Icons.local_dining,
               title: 'Daily Protein Calculator',
               description: 'Calculate your daily protein needs based on weight',
@@ -75,19 +88,6 @@ class HomeScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const BMICalculatorScreen(),
-                  ),
-                );
-              },
-            ),
-            HomeFeatureTile(
-              icon: Icons.directions_run,
-              title: 'Cardio Exercise',
-              description: 'Running, cycling, and jogging workouts',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const CardioExerciseScreen(),
                   ),
                 );
               },
