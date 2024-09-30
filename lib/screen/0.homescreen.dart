@@ -1,3 +1,4 @@
+import 'package:fitnessapp/screen/6.fun_fact_screen.dart';
 import 'package:flutter/material.dart';
 import '2.workouts.dart';
 import '3.protein_calculator_screen.dart';
@@ -14,11 +15,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    WorkoutsScreen(),
-    ProteinCalculatorScreen(),
-    BMICalculatorScreen(),
-    UserProfileScreen(),
+  static List<Widget> _widgetOptions = <Widget>[
+    const WorkoutsScreen(),
+    const ProteinCalculatorScreen(),
+    const BMICalculatorScreen(),
+    FunFactsScreen(),
+    const UserProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -37,20 +39,28 @@ class _HomeScreenState extends State<HomeScreen> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
+        items: <BottomNavigationBarItem>[
+          const BottomNavigationBarItem(
             icon: Icon(Icons.fitness_center),
             label: 'Workouts',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.local_dining),
             label: 'Protein Calc',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.monitor_weight),
+            icon: Image.asset(
+              'assets/img/bg/bmi.jpg',
+              width: 24,
+              height: 24,
+            ),
             label: 'BMI',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.lightbulb_outline),
+            label: 'Fun Facts',
+          ),
+          const BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
           ),
