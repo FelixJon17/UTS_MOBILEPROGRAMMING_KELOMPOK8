@@ -3,6 +3,7 @@ import '2.workouts.dart';
 import '3.protein_calculator_screen.dart';
 import '4.bmi_index_calculator.dart';
 import '7.profile_screen.dart';
+import '6.fun_fact_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const WorkoutsScreen(),
     const ProteinCalculatorScreen(),
     const BMICalculatorScreen(),
+    const FunFactsScreen(),
     const UserProfileScreen(),
   ];
 
@@ -48,11 +50,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/img/bg/bmi.jpg',
+              'assets/img/on_1.png',
               width: 24,
               height: 24,
             ),
             label: 'BMI',
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.lightbulb_outline),
+            label: 'Fun Facts',
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.person),
