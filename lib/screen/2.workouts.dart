@@ -46,8 +46,6 @@ class WorkoutsScreen extends StatelessWidget {
                   );
                 },
               ),
-              const SizedBox(height: 20),
-              // Add more WorkoutOptionCard if necessary
             ],
           ),
         ),
