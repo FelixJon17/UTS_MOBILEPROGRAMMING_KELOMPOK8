@@ -1,6 +1,6 @@
-import '1. chest_workout/upper_chest_screen.dart';
-import '1. chest_workout/middle_chest_screen.dart';
-import '1. chest_workout/lower_chest_screen.dart';
+import '1.chest_workout/upper_chest_screen.dart';
+import '1.chest_workout/middle_chest_screen.dart';
+import '1.chest_workout/lower_chest_screen.dart';
 import 'package:flutter/material.dart';
 
 class ChestWorkoutsScreen extends StatelessWidget {

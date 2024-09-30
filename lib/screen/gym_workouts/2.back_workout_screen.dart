@@ -1,6 +1,6 @@
-import 'package:fitnessapp/screen/gym_workouts/2.%20Back_workout/1.%20upper_Back_screen.dart';
-import 'package:fitnessapp/screen/gym_workouts/2.%20Back_workout/2.%20middle_Back_screen.dart';
-import 'package:fitnessapp/screen/gym_workouts/2.%20Back_workout/3.%20lower_Back_screen.dart';
+import '/screen/gym_workouts/2.back_workout/upper_back_screen.dart';
+import '/screen/gym_workouts/2.back_workout/middle_back_screen.dart';
+import '/screen/gym_workouts/2.back_workout/lower_back_screen.dart';
 import 'package:flutter/material.dart';
 
 class BackWorkoutsScreen extends StatelessWidget {
