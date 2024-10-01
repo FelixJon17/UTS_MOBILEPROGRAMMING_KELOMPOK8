@@ -84,6 +84,8 @@ flutter:
     - assets/img/bg/running.jpg
     - assets/img/bmi.png
     - assets/img/muscle.png
+    - assets/img/protein.png
+    - assets/img/bulb.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -48,8 +48,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             label: 'Workouts',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.local_dining),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              'assets/img/protein.png',
+              width: 24,
+              height: 24,
+            ),
             label: 'Protein',
           ),
           BottomNavigationBarItem(
@@ -60,9 +64,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             label: 'BMI',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.lightbulb_outline),
-            label: 'Fun Facts',
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              'assets/img/bulb.png',
+              width: 24,
+              height: 24,
+            ),
+            label: 'Protein',
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.person),
