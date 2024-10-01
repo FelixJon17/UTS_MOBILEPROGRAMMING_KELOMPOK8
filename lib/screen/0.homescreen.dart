@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/img/on_1.png',
+              'assets/img/bmi.png',
               width: 24,
               height: 24,
             ),
