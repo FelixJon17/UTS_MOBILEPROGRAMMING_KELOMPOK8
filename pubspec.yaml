@@ -90,6 +90,13 @@ flutter:
     - assets/img/chest/chest.png
     - assets/img/back/back.png
     - assets/img/arm/arm.png
+    - assets/img/shoulder/shoulder.png
+    - assets/img/leg/leg.png
+    - assets/img/bmitable.png
+    - assets/img/weight.png
+    - assets/img/height.png
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
