@@ -40,13 +40,17 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              'assets/img/muscle.png',
+              width: 24,
+              height: 24,
+            ),
             label: 'Workouts',
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.local_dining),
-            label: 'Protein Calc',
+            label: 'Protein',
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
