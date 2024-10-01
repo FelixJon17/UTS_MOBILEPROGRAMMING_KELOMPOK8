@@ -30,7 +30,11 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
         child: ListView(
           children: [
             HomeFeatureTile(
-              icon: Icons.fitness_center,
+              icon: Image.asset(
+                'assets/img/chest/chest.png',
+                width: 60,
+                height: 60,
+              ),
               title: 'Chest Workouts',
               description: 'Trains upper, middle, and lower chest',
               onTap: () {
@@ -44,7 +48,11 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
               },
             ),
             HomeFeatureTile(
-              icon: Icons.fitness_center,
+              icon: Image.asset(
+                'assets/img/back/back.png',
+                width: 60,
+                height: 60,
+              ),
               title: 'Back Workouts',
               description: 'Trains upper, middle, and lower back',
               onTap: () {
@@ -57,22 +65,12 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
                 );
               },
             ),
-            // HomeFeatureTile(
-            //   icon: Icons.fitness_center,
-            //   title: 'Shoulder Workouts',
-            //   description: 'Trains front, lateral, and rear delts',
-            //   onTap: () {
-            //     _onWorkoutSelected('Back');
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) => const ShoulderWorkoutsScreen(),
-            //       ),
-            //     );
-            //   },
-            // ),
             HomeFeatureTile(
-              icon: Icons.fitness_center,
+              icon: Image.asset(
+                'assets/img/arm/arm.png',
+                width: 60,
+                height: 60,
+              ),
               title: 'Arm Workouts',
               description: 'Trains biceps, triceps, and forearms',
               onTap: () {
@@ -80,7 +78,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
               },
             ),
             HomeFeatureTile(
-              icon: Icons.fitness_center,
+              icon: Icon(Icons.fitness_center, size: 48),
               title: 'Leg Workouts',
               description: 'Trains quads, hamstrings, and calves',
               onTap: () {
@@ -96,7 +94,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
 }
 
 class HomeFeatureTile extends StatelessWidget {
-  final IconData icon;
+  final Widget icon;
   final String title;
   final String description;
   final VoidCallback onTap;
@@ -115,7 +113,7 @@ class HomeFeatureTile extends StatelessWidget {
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: ListTile(
-        leading: Icon(icon, size: 40, color: Colors.blueAccent),
+        leading: icon,
         title: Text(
           title,
           style: const TextStyle(fontWeight: FontWeight.bold),

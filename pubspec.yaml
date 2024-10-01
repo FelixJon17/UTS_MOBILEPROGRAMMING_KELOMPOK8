@@ -87,6 +87,9 @@ flutter:
     - assets/img/protein.png
     - assets/img/bulb.png
     - assets/img/profile.png
+    - assets/img/chest/chest.png
+    - assets/img/back/back.png
+    - assets/img/arm/arm.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
