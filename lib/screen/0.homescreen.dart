@@ -72,8 +72,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             label: 'Protein',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              'assets/img/profile.png',
+              width: 24,
+              height: 24,
+            ),
             label: 'Profile',
           ),
         ],
