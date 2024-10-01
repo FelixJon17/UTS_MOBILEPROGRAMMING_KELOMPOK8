@@ -49,8 +49,6 @@ class LowerChestTile extends StatelessWidget {
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: ListTile(
-        leading: const Icon(Icons.fitness_center,
-            size: 40, color: Colors.blueAccent),
         title: Text(
           title,
           style: const TextStyle(fontWeight: FontWeight.bold),
