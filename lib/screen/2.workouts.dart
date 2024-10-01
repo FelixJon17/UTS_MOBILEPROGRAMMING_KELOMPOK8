@@ -33,7 +33,7 @@ class WorkoutsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               WorkoutOptionCard(
-                imagePath: 'assets/img/bg/gympic.jpg',
+                imagePath: 'assets/img/bg/running.jpg',
                 title: 'Cardio Exercise',
                 description:
                     'Find exercises like running, cycling, and jogging.',
