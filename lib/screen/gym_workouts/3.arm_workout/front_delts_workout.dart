@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 
-class ForearmsScreen extends StatelessWidget {
-  const ForearmsScreen({super.key});
+class FrontShoulderScreen extends StatelessWidget {
+  const FrontShoulderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Back Workouts'),
+        title: const Text('Shoulder Workouts'),
         backgroundColor: const Color.fromARGB(255, 116, 122, 133),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: const [
-            ForearmsTile(
-              title: 'Forearms Pushdown',
+            FrontShoulderTile(
+              title: 'Dumbell Shoulder Press',
               description: '4 x 12 reps',
             ),
-            ForearmsTile(
-              title: 'Skull Crusher',
+            FrontShoulderTile(
+              title: 'Barbell Shoulder Press',
               description: '4 x 12 reps',
             ),
-            ForearmsTile(
-              title: ' Curl',
+            FrontShoulderTile(
+              title: 'Arnold Press',
               description: '4 x 12 reps',
             ),
           ],
@@ -33,11 +33,11 @@ class ForearmsScreen extends StatelessWidget {
   }
 }
 
-class ForearmsTile extends StatelessWidget {
+class FrontShoulderTile extends StatelessWidget {
   final String title;
   final String description;
 
-  const ForearmsTile({
+  const FrontShoulderTile({
     super.key,
     required this.title,
     required this.description,

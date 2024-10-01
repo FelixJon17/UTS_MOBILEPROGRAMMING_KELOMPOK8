@@ -78,7 +78,8 @@ class FunFactsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Health Food"),
+        title: const Text("Healthy Food"),
+        backgroundColor: Colors.blueAccent,
         leading: const Icon(Icons.arrow_back),
         actions: [
           IconButton(

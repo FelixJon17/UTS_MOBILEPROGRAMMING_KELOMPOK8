@@ -42,7 +42,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   @override
   void initState() {
     super.initState();
-    _loadUserData(); 
+    _loadUserData();
   }
 
   @override
@@ -50,7 +50,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('User Profile'),
-        backgroundColor: const Color.fromARGB(255, 116, 122, 133),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

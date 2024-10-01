@@ -32,9 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Mobile Fitness Home'),
-      ),
+
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),

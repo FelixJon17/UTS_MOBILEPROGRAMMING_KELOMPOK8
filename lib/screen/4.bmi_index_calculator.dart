@@ -42,15 +42,9 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
   }
 
   Widget _buildBMITable() {
-    return Table(
-      border: TableBorder.all(color: Colors.blueGrey, width: 1),
-      children: [
-        _buildRow('BMI Range', 'Category', isHeader: true),
-        _buildRow('< 18.5', 'Underweight'),
-        _buildRow('18.5 - 24.9', 'Normal weight'),
-        _buildRow('25 - 29.9', 'Overweight'),
-        _buildRow('30 and above', 'Obesity'),
-      ],
+    return Image.asset(
+      'assets/img/bmitable.png',
+      fit: BoxFit.cover,
     );
   }
 
@@ -64,7 +58,8 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
             bmiRange,
             style: TextStyle(
               fontWeight: isHeader ? FontWeight.bold : FontWeight.normal,
-              color: isHeader ? Colors.white : Colors.blueGrey[800],
+              color:
+                  isHeader ? Colors.white : const Color.fromARGB(255, 0, 0, 0),
             ),
             textAlign: TextAlign.center,
           ),
@@ -82,7 +77,9 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
         ),
       ],
       decoration: BoxDecoration(
-        color: isHeader ? Colors.blueGrey : Colors.blueGrey[100],
+        color: isHeader
+            ? const Color.fromARGB(255, 0, 0, 0)
+            : const Color.fromARGB(255, 0, 0, 0),
       ),
     );
   }
@@ -92,7 +89,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('BMI Calculator'),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blueAccent,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -106,7 +103,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
               style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.blueGrey,
+                color: Color.fromARGB(255, 0, 0, 0),
               ),
             ),
             const SizedBox(height: 10.0),
@@ -119,16 +116,25 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Weight (kg)',
-                labelStyle: const TextStyle(color: Colors.blueGrey),
-                prefixIcon:
-                    const Icon(Icons.line_weight, color: Colors.blueGrey),
+                labelStyle:
+                    const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                prefixIcon: Padding(
+                  padding:
+                      const EdgeInsets.all(8.0), // Padding to adjust icon size
+                  child: Image.asset(
+                    'assets/img/weight.png', // Your weight icon image
+                    width: 24,
+                    height: 24,
+                  ),
+                ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.blueGrey),
+                  borderSide:
+                      const BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide:
-                      const BorderSide(color: Colors.blueGrey, width: 2.0),
+                  borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 0, 0, 0), width: 2.0),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
@@ -141,15 +147,24 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Height (cm)',
-                labelStyle: const TextStyle(color: Colors.blueGrey),
-                prefixIcon: const Icon(Icons.height, color: Colors.blueGrey),
+                labelStyle:
+                    const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    'assets/img/height.png',
+                    width: 24,
+                    height: 24,
+                  ),
+                ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.blueGrey),
+                  borderSide:
+                      const BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide:
-                      const BorderSide(color: Colors.blueGrey, width: 2.0),
+                  borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 0, 0, 0), width: 2.0),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
@@ -160,7 +175,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
             ElevatedButton(
               onPressed: _calculateBMI,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueGrey,
+                backgroundColor: const Color.fromARGB(255, 63, 103, 123),
                 padding: const EdgeInsets.symmetric(vertical: 14.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
@@ -171,7 +186,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                 style: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 48, 45, 45),
+                  color: Color.fromARGB(255, 36, 35, 35),
                 ),
               ),
             ),
@@ -181,17 +196,16 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
             Container(
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
-                color: Colors.blueGrey.withOpacity(0.1),
+                color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
                 borderRadius: BorderRadius.circular(10.0),
-                border: Border.all(color: Colors.blueGrey),
+                border: Border.all(color: const Color.fromARGB(255, 0, 0, 0)),
               ),
               child: Text(
                 _bmiResult,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blueGrey,
+                  fontSize: 16.0,
+                  color: Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
             ),

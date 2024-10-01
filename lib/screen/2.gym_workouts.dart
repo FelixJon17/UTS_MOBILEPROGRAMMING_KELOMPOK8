@@ -1,5 +1,6 @@
 import 'package:fitnessapp/screen/gym_workouts/1.chest_workout_screen.dart';
 import 'package:fitnessapp/screen/gym_workouts/2.back_workout_screen.dart';
+import 'package:fitnessapp/screen/gym_workouts/3.arm_workout_screen.dart';
 import 'package:flutter/material.dart';
 
 class GymWorkoutsScreen extends StatefulWidget {
@@ -23,7 +24,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('GYM Workouts'),
-        backgroundColor: const Color.fromARGB(255, 116, 122, 133),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -75,10 +76,20 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
               description: 'Trains biceps, triceps, and forearms',
               onTap: () {
                 _onWorkoutSelected('Arms');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ArmWorkoutsScreen(),
+                  ),
+                );
               },
             ),
             HomeFeatureTile(
-              icon: Icon(Icons.fitness_center, size: 48),
+              icon: Image.asset(
+                'assets/img/leg/leg.png',
+                width: 60,
+                height: 60,
+              ),
               title: 'Leg Workouts',
               description: 'Trains quads, hamstrings, and calves',
               onTap: () {

@@ -1,17 +1,17 @@
-import '1.chest_workout/upper_chest_screen.dart';
-import '1.chest_workout/middle_chest_screen.dart';
-import '1.chest_workout/lower_chest_screen.dart';
+import 'package:fitnessapp/screen/gym_workouts/3.arm_workout/front_delts_workout.dart';
+import 'package:fitnessapp/screen/gym_workouts/3.arm_workout/lateral_delts_workout.dart';
+import 'package:fitnessapp/screen/gym_workouts/3.arm_workout/rear_delts_workout.dart';
 import 'package:flutter/material.dart';
 
-class ChestWorkoutsScreen extends StatelessWidget {
-  const ChestWorkoutsScreen({super.key});
+class ShoulderWorkoutsScreen extends StatelessWidget {
+  const ShoulderWorkoutsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chest Workouts'),
-        backgroundColor: Colors.blueAccent,
+        title: const Text('Shoulder Workouts'),
+        backgroundColor: const Color.fromARGB(255, 116, 122, 133),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -19,39 +19,39 @@ class ChestWorkoutsScreen extends StatelessWidget {
           children: [
             HomeFeatureTile(
               icon: Icons.fitness_center,
-              title: 'Upper Chest',
-              description: 'Targets the upper chest',
+              title: 'Front Delts',
+              description: 'Targets the upper shoulder',
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const UpperChestScreen(),
+                    builder: (context) => const FrontShoulderScreen(),
                   ),
                 );
               },
             ),
             HomeFeatureTile(
               icon: Icons.fitness_center,
-              title: 'Middle Chest',
-              description: 'Targets the middle chest',
+              title: 'Lateral Delts',
+              description: 'Targets the middle shoulder',
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const MiddleChestScreen(),
+                    builder: (context) => const LateralShoulderScreen(),
                   ),
                 );
               },
             ),
             HomeFeatureTile(
               icon: Icons.fitness_center,
-              title: 'Lower Chest',
-              description: 'Targets the lower chest',
+              title: 'Rear Delts',
+              description: 'Targets the rear delts',
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const LowerChestScreen(),
+                    builder: (context) => const RearShoulderScreen(),
                   ),
                 );
               },
