@@ -1,6 +1,7 @@
 import 'package:fitnessapp/screen/gym_workouts/1.chest_workout_screen.dart';
 import 'package:fitnessapp/screen/gym_workouts/2.back_workout_screen.dart';
 import 'package:fitnessapp/screen/gym_workouts/3.arm_workout_screen.dart';
+import 'package:fitnessapp/screen/gym_workouts/4.leg_workout_screen.dart';
 import 'package:flutter/material.dart';
 
 class GymWorkoutsScreen extends StatefulWidget {
@@ -94,7 +95,12 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
               description: 'Trains quads, hamstrings, and calves',
               onTap: () {
                 _onWorkoutSelected('Legs');
-                // Navigate to leg workouts
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LegWorkoutScreen(),
+                  ),
+                );// Navigate to leg workouts
               },
             ),
           ],
