@@ -15,13 +15,12 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
   final _weightController = TextEditingController();
   String _selectedGender = 'male';
   String _activityLevel = 'Light: exercise 1-3 times/week';
-  String _fitnessGoal = 'Maintain Current Weight';  // Added fitness goal
+  String _fitnessGoal = 'Maintain Current Weight'; // Added fitness goal
   String _result = '';
 
   void _calculateProteinRequirement() {
     final int age = int.tryParse(_ageController.text) ?? 0;
     final int heightFeet = int.tryParse(_heightFeetController.text) ?? 0;
-    final int heightInches = int.tryParse(_heightInchesController.text) ?? 0;
     final double weightPounds = double.tryParse(_weightController.text) ?? 0;
 
     if (age <= 0 || heightFeet <= 0 || weightPounds <= 0) {
@@ -34,7 +33,6 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
     // ubah poung ke kilo
     final double weightKg = weightPounds * 0.453592;
 
-    
     double proteinPerKg;
     switch (_activityLevel) {
       case 'Moderate: exercise 4-5 times/week':

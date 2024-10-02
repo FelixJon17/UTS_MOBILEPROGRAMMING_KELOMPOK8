@@ -1,10 +1,10 @@
 import '4.leg_workout/calves_workout.dart';
 import '4.leg_workout/hamstring_workout.dart';
-import '4.leg_workout/quads_workout.dart';
+import '4.leg_workout/quads_Workout.dart';
 import 'package:flutter/material.dart';
 
-class LegWorkoutScreen extends StatelessWidget {
-  const LegWorkoutScreen({super.key});
+class LegWorkoutsScreen extends StatelessWidget {
+  const LegWorkoutsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,23 +18,18 @@ class LegWorkoutScreen extends StatelessWidget {
         child: ListView(
           children: [
             HomeFeatureTile(
-              icon: Icons.fitness_center,
-              title: 'Calves',
-              description:
-                  'Targets the muscles of the lower legs',
+              title: 'Quads',
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CalvesScreen(),
+                    builder: (context) => const QuadsScreen(),
                   ),
                 );
               },
             ),
             HomeFeatureTile(
-              icon: Icons.fitness_center,
               title: 'Hamstring',
-              description: 'Targets the muscles of the upper legs',
               onTap: () {
                 Navigator.push(
                   context,
@@ -45,19 +40,16 @@ class LegWorkoutScreen extends StatelessWidget {
               },
             ),
             HomeFeatureTile(
-              icon: Icons.fitness_center,
-              title: 'Quads',
-              description: 'Targets the muscles of the lower and upper legs',
+              title: 'Calves',
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const QuadsScreen(),
+                    builder: (context) => const CalvesScreen(),
                   ),
                 );
               },
             ),
-           
           ],
         ),
       ),
@@ -66,16 +58,11 @@ class LegWorkoutScreen extends StatelessWidget {
 }
 
 class HomeFeatureTile extends StatelessWidget {
-  final IconData icon;
   final String title;
-  final String description;
   final VoidCallback onTap;
-
   const HomeFeatureTile({
     super.key,
-    required this.icon,
     required this.title,
-    required this.description,
     required this.onTap,
   });
 
@@ -84,14 +71,48 @@ class HomeFeatureTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      child: ListTile(
-        leading: Icon(icon, size: 40, color: Colors.blueAccent),
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-        subtitle: Text(description),
+      child: InkWell(
         onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(20.0), // Padding untuk seluruh konten
+          height: 120, // Tinggi card
+          child: Row(
+            children: [
+              // Gambar di sebelah kiri
+              Container(
+                width: 70, // Lebar gambar
+                height: 70, // Tinggi gambar
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                      10), // Membuat sudut gambar melengkung
+                ),
+                child: Image.asset(
+                  'assets/img/leg/leg.png', // Path gambar
+                  fit: BoxFit.cover, // Agar gambar memenuhi container
+                ),
+              ),
+              const SizedBox(width: 20), // Jarak antara gambar dan teks
+
+              // Bagian teks di sebelah kanan
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20, // Ukuran font lebih besar
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

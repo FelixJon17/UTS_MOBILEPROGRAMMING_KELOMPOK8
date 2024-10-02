@@ -8,7 +8,7 @@ class LowerChestScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Chest Workouts'),
-        backgroundColor: const Color.fromARGB(255, 116, 122, 133),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

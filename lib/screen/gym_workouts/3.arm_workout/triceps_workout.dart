@@ -23,7 +23,7 @@ class TricepsScreen extends StatelessWidget {
               description: '4 x 12 reps',
             ),
             TricepsTile(
-              title: ' Curl',
+              title: ' Overhead Triceps Extension',
               description: '4 x 12 reps',
             ),
           ],

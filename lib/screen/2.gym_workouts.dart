@@ -62,7 +62,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const BackWorkoutsScreen(),
+                    builder: (context) => const backWorkoutsScreen(),
                   ),
                 );
               },
@@ -95,12 +95,12 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
               description: 'Trains quads, hamstrings, and calves',
               onTap: () {
                 _onWorkoutSelected('Legs');
-                 Navigator.push(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const LegWorkoutScreen(),
+                    builder: (context) => const LegWorkoutsScreen(),
                   ),
-                );// Navigate to leg workouts
+                ); // Navigate to leg workouts
               },
             ),
           ],
