@@ -10,33 +10,30 @@ class ProteinCalculatorScreen extends StatefulWidget {
 
 class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
   final _ageController = TextEditingController();
-  final _heightFeetController = TextEditingController();
-  final _heightInchesController = TextEditingController();
+  final _heightCmController = TextEditingController(); // Hanya menggunakan controller untuk centimeters
   final _weightController = TextEditingController();
   String _selectedGender = 'male';
   String _activityLevel = 'Light: exercise 1-3 times/week';
-  String _fitnessGoal = 'Maintain Current Weight'; // Added fitness goal
+  String _fitnessGoal = 'Maintain Current Weight';
   String _result = '';
 
   void _calculateProteinRequirement() {
     final int age = int.tryParse(_ageController.text) ?? 0;
-    final int heightFeet = int.tryParse(_heightFeetController.text) ?? 0;
-    final double weightPounds = double.tryParse(_weightController.text) ?? 0;
+    final double heightCm = double.tryParse(_heightCmController.text) ?? 0;
+    final double weightKg = double.tryParse(_weightController.text) ?? 0;
 
-    if (age <= 0 || heightFeet <= 0 || weightPounds <= 0) {
+    if (age <= 0 || heightCm <= 0 || weightKg <= 0) {
       setState(() {
         _result = 'Please enter valid numbers';
       });
       return;
     }
 
-    // ubah poung ke kilo
-    final double weightKg = weightPounds * 0.453592;
-
+    // Logika penentuan kebutuhan protein
     double proteinPerKg;
     switch (_activityLevel) {
       case 'Moderate: exercise 4-5 times/week':
-        proteinPerKg = 1.3; //  level sedang
+        proteinPerKg = 1.3; // level sedang
         break;
       case 'Active: daily exercise or intense exercise 6-7 times/week':
         proteinPerKg = 1.6; // level aktif
@@ -45,7 +42,7 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
         proteinPerKg = 1.0; // level ringan
     }
 
-    // penentuan protein berdasarkan tujuan
+    // Penentuan protein berdasarkan tujuan
     if (_fitnessGoal == 'Lose Weight (Cutting)') {
       proteinPerKg += 0.2; // protein untuk cutting
     } else if (_fitnessGoal == 'Gain Weight (Bulking)') {
@@ -122,30 +119,13 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
             ),
             const SizedBox(height: 16.0),
 
-            Row(
-              children: [
-                Flexible(
-                  child: TextField(
-                    controller: _heightFeetController,
-                    keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                      labelText: 'Height (feet)',
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10.0),
-                Flexible(
-                  child: TextField(
-                    controller: _heightInchesController,
-                    keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                      labelText: 'Height (inches)',
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-              ],
+            TextField(
+              controller: _heightCmController,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                labelText: 'Height (centimeters)', // Ubah label
+                border: OutlineInputBorder(),
+              ),
             ),
             const SizedBox(height: 16.0),
 
@@ -153,7 +133,7 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
               controller: _weightController,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
-                labelText: 'Weight (pounds)',
+                labelText: 'Weight (kilograms)',
                 border: OutlineInputBorder(),
               ),
             ),
@@ -183,7 +163,6 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
             ),
             const SizedBox(height: 16.0),
 
-            // Dropdown for Fitness Goal
             DropdownButtonFormField<String>(
               value: _fitnessGoal,
               decoration: const InputDecoration(
@@ -221,8 +200,7 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       _ageController.clear();
-                      _heightFeetController.clear();
-                      _heightInchesController.clear();
+                      _heightCmController.clear();
                       _weightController.clear();
                       setState(() {
                         _result = '';
