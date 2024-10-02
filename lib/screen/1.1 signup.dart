@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '0.homescreen.dart';
 import 'user_state.dart';
+import '1.login_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -103,7 +104,12 @@ class SignUpScreen extends StatelessWidget {
 
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  // Navigasi ke halaman Login
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginScreen()),
+                  );
                 },
                 child: const Text("Already have an account? Login"),
               ),
