@@ -71,8 +71,91 @@ class FlutterApp extends StatelessWidget {
   }
 }
 
-class FunFactsScreen extends StatelessWidget {
+class FunFactsScreen extends StatefulWidget {
   const FunFactsScreen({super.key});
+
+  @override
+  _FunFactsScreenState createState() => _FunFactsScreenState();
+}
+
+class _FunFactsScreenState extends State<FunFactsScreen> {
+  final List<FoodItem> _allFoods = [
+    FoodItem(
+      imageUrl: "https://picsum.photos/200/300",
+      title: "Sayur Salad Bumbu Rempah",
+      time: "20 Mins",
+      calories: "100 Cal",
+      protein: "80 Protein",
+      rating: "5.0",
+    ),
+    FoodItem(
+      imageUrl: "https://picsum.photos/200/301",
+      title: "Ketoprak Telor",
+      time: "12 Mins",
+      calories: "120 Cal",
+      protein: "80 Protein",
+      rating: "5.0",
+    ),
+    FoodItem(
+      imageUrl: "https://picsum.photos/200/302",
+      title: "Crunchy Nut Coleslaw",
+      time: "12 Mins",
+      calories: "120 Cal",
+      protein: "80 Protein",
+      rating: "4.8",
+    ),
+  ];
+
+  List<FoodItem> _displayedFoods = [];
+  final List<FoodItem> _savedFoods = [];
+  String _filter = 'All';
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _displayedFoods = _allFoods;
+  }
+
+  void _filterFoods(String filter) {
+    setState(() {
+      _filter = filter;
+      if (filter == 'All') {
+        _displayedFoods = _allFoods;
+      } else if (filter == 'Saved') {
+        _displayedFoods = _savedFoods;
+      } else if (filter == 'Trending') {
+        _displayedFoods =
+            _allFoods.where((food) => food.rating == '5.0').toList();
+      }
+    });
+  }
+
+  void _searchFoods(String query) {
+    setState(() {
+      _displayedFoods = _allFoods.where((food) {
+        return food.title.toLowerCase().contains(query.toLowerCase());
+      }).toList();
+    });
+  }
+
+  void _toggleSave(FoodItem food) {
+    setState(() {
+      if (_savedFoods.contains(food)) {
+        // Remove from saved list if already saved
+        _savedFoods.remove(food);
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('${food.title} removed from saved!'),
+        ));
+      } else {
+        // Add to saved list if not already saved
+        _savedFoods.add(food);
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('${food.title} saved!'),
+        ));
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +167,9 @@ class FunFactsScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
-            onPressed: () {},
+            onPressed: () {
+              _searchFoods(_searchController.text);
+            },
           ),
           IconButton(
             icon: const Icon(Icons.filter_list),
@@ -97,52 +182,55 @@ class FunFactsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: _searchController,
+              decoration: const InputDecoration(
                 labelText: 'Search "Salad"',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.search),
                 suffixIcon: Icon(Icons.filter_alt_outlined),
               ),
+              onChanged: (value) {
+                _searchFoods(value);
+              },
             ),
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Chip(label: Text('All')),
-                Chip(label: Text('Saved')),
-                Chip(label: Text('Trending')),
+              children: [
+                ChoiceChip(
+                  label: const Text('All'),
+                  selected: _filter == 'All',
+                  onSelected: (selected) {
+                    if (selected) _filterFoods('All');
+                  },
+                ),
+                ChoiceChip(
+                  label: const Text('Saved'),
+                  selected: _filter == 'Saved',
+                  onSelected: (selected) {
+                    if (selected) _filterFoods('Saved');
+                  },
+                ),
+                ChoiceChip(
+                  label: const Text('Trending'),
+                  selected: _filter == 'Trending',
+                  onSelected: (selected) {
+                    if (selected) _filterFoods('Trending');
+                  },
+                ),
               ],
             ),
             const SizedBox(height: 10),
             Expanded(
               child: ListView(
-                children: [
-                  FoodCard(
-                    imageUrl: "https://picsum.photos/200/300",
-                    title: "Sayur Salad Bumbu Rempah",
-                    time: "20 Mins",
-                    calories: "100 Cal",
-                    protein: "80 Protein",
-                    rating: "5.0",
-                  ),
-                  FoodCard(
-                    imageUrl: "https://picsum.photos/200/301",
-                    title: "Ketoprak Telor",
-                    time: "12 Mins",
-                    calories: "120 Cal",
-                    protein: "80 Protein",
-                    rating: "5.0",
-                  ),
-                  FoodCard(
-                    imageUrl: "https://picsum.photos/200/302",
-                    title: "Crunchy Nut Coleslaw",
-                    time: "12 Mins",
-                    calories: "120 Cal",
-                    protein: "80 Protein",
-                    rating: "4.8",
-                  ),
-                ],
+                children: _displayedFoods.map((food) {
+                  return FoodCard(
+                    food: food,
+                    isSaved: _savedFoods.contains(food),
+                    onToggleSave: () => _toggleSave(food),
+                  );
+                }).toList(),
               ),
             ),
           ],
@@ -153,20 +241,14 @@ class FunFactsScreen extends StatelessWidget {
 }
 
 class FoodCard extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final String time;
-  final String calories;
-  final String protein;
-  final String rating;
+  final FoodItem food;
+  final bool isSaved;
+  final VoidCallback onToggleSave;
 
   const FoodCard({
-    required this.imageUrl,
-    required this.title,
-    required this.time,
-    required this.calories,
-    required this.protein,
-    required this.rating,
+    required this.food,
+    required this.isSaved,
+    required this.onToggleSave,
     super.key,
   });
 
@@ -176,32 +258,54 @@ class FoodCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: [
-          Image.network(imageUrl, width: 100, height: 100, fit: BoxFit.cover),
+          Image.network(food.imageUrl,
+              width: 100, height: 100, fit: BoxFit.cover),
           const SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title,
+                Text(food.title,
                     style: const TextStyle(fontWeight: FontWeight.bold)),
                 const SizedBox(height: 5),
                 Row(
                   children: [
-                    Text('$time • $calories • $protein'),
+                    Text('${food.time} • ${food.calories} • ${food.protein}'),
                     const Spacer(),
                     const Icon(Icons.star, color: Colors.orange),
-                    Text(rating),
+                    Text(food.rating),
                   ],
                 ),
               ],
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.bookmark_border),
-            onPressed: () {},
+            icon: Icon(
+              isSaved ? Icons.bookmark : Icons.bookmark_border, // Toggle icon
+              color: isSaved ? Colors.blue : Colors.grey, // Change color
+            ),
+            onPressed: onToggleSave, // Toggle save status on press
           ),
         ],
       ),
     );
   }
+}
+
+class FoodItem {
+  final String imageUrl;
+  final String title;
+  final String time;
+  final String calories;
+  final String protein;
+  final String rating;
+
+  const FoodItem({
+    required this.imageUrl,
+    required this.title,
+    required this.time,
+    required this.calories,
+    required this.protein,
+    required this.rating,
+  });
 }
