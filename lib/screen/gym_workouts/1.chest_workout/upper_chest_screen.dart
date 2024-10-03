@@ -60,27 +60,35 @@ class UpperChestTile extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
+        child: Row(
           children: [
             Image.asset(
               assetPath,
-              height: 200, // Ukuran tinggi GIF bisa disesuaikan
+              height: 160, // Ukuran tinggi gambar, bisa disesuaikan
+              width: 160, // Ukuran lebar gambar, bisa disesuaikan
               fit: BoxFit.cover,
             ),
-            const SizedBox(height: 8),
-            Text(
-              title,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              description,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 0, 0, 0),
+            const SizedBox(width: 16), // Spasi antara gambar dan teks
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start, // Text rata kiri
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    description,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

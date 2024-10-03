@@ -77,13 +77,13 @@ class HomeFeatureTile extends StatelessWidget {
         onTap: onTap,
         child: Container(
           padding: const EdgeInsets.all(20.0), // Padding untuk seluruh konten
-          height: 120, // Tinggi card
+          height: 180, // Tinggi card
           child: Row(
             children: [
               // Gambar di sebelah kiri
               Container(
-                width: 70, // Lebar gambar
-                height: 70, // Tinggi gambar
+                width: 100, // Lebar gambar
+                height: 100, // Tinggi gambar
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
                       10), // Membuat sudut gambar melengkung

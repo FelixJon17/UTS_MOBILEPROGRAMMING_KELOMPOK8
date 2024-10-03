@@ -34,8 +34,8 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
             HomeFeatureTile(
               icon: Image.asset(
                 'assets/img/chest/chest.png',
-                width: 60,
-                height: 60,
+                width: 100,
+                height: 100,
               ),
               title: 'Chest Workouts',
               description: 'Trains upper, middle, and lower chest',
@@ -52,8 +52,8 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
             HomeFeatureTile(
               icon: Image.asset(
                 'assets/img/back/back.png',
-                width: 60,
-                height: 60,
+                width: 100,
+                height: 100,
               ),
               title: 'Back Workouts',
               description: 'Trains upper, middle, and lower back',
@@ -70,8 +70,8 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
             HomeFeatureTile(
               icon: Image.asset(
                 'assets/img/arm/arm.png',
-                width: 60,
-                height: 60,
+                width: 100,
+                height: 100,
               ),
               title: 'Arm Workouts',
               description: 'Trains biceps, triceps, and forearms',
@@ -88,8 +88,8 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
             HomeFeatureTile(
               icon: Image.asset(
                 'assets/img/leg/leg.png',
-                width: 60,
-                height: 60,
+                width: 100,
+                height: 100,
               ),
               title: 'Leg Workouts',
               description: 'Trains quads, hamstrings, and calves',
@@ -129,14 +129,47 @@ class HomeFeatureTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      child: ListTile(
-        leading: icon,
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-        subtitle: Text(description),
+      child: InkWell(
         onTap: onTap,
+        child: Container(
+          padding:
+              const EdgeInsets.all(16.0), // Memberikan padding di dalam tile
+          height: 150, // Sesuaikan ukuran tinggi tile
+          child: Row(
+            children: [
+              SizedBox(
+                width: 120, // Sesuaikan ukuran gambar/icon
+                height: 120,
+                child: icon,
+              ),
+              const SizedBox(width: 16), // Spasi antara gambar dan teks
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment
+                      .center, // Align teks di tengah secara vertikal
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20, // Menyesuaikan ukuran teks
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      description,
+                      style: const TextStyle(
+                        fontSize: 16, // Sesuaikan ukuran teks deskripsi
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
