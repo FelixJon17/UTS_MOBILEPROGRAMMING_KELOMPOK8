@@ -14,17 +14,20 @@ class LowerChestScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: const [
-            LowerChestTile(
-              title: 'Decline Dumbell Press',
+            UpperChestTile(
+              title: 'Decline Dumbbell Press',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/chest/decline-dumbell-press.gif',
             ),
-            LowerChestTile(
+            UpperChestTile(
               title: 'Decline Bench Press',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/chest/decline-press.gif',
             ),
-            LowerChestTile(
-              title: 'Decline Cable Fly',
+            UpperChestTile(
+              title: 'Decline Dumbell Fly',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/chest/decline-dumbell-fly.gif',
             ),
           ],
         ),
@@ -33,14 +36,16 @@ class LowerChestScreen extends StatelessWidget {
   }
 }
 
-class LowerChestTile extends StatelessWidget {
+class UpperChestTile extends StatelessWidget {
   final String title;
   final String description;
+  final String assetPath;
 
-  const LowerChestTile({
+  const UpperChestTile({
     super.key,
     required this.title,
     required this.description,
+    required this.assetPath,
   });
 
   @override
@@ -48,12 +53,33 @@ class LowerChestTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      child: ListTile(
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Image.asset(
+              assetPath,
+              height: 200, // Ukuran tinggi GIF bisa disesuaikan
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              title,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              description,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+            ),
+          ],
         ),
-        subtitle: Text(description),
       ),
     );
   }

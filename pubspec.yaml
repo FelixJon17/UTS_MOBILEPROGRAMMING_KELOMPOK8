@@ -72,9 +72,19 @@ flutter:
     - assets/img/arm/tricep-pushdown.gif
     - assets/img/back/barbell-bent-over-row.gif
     - assets/img/back/wide-grip-lat-pulldown.gif
-    - assets/img/chest/barbell-bench-press.gif
     - assets/img/chest/barbell-decline-bench-press.gif
-    - assets/img/chest/barbell-incline-bench-press.gif
+    - assets/img/chest/incline-dumbell-press.gif
+    - assets/img/chest/incline-bench-press.gif
+    - assets/img/chest/incline-dumbell-press.gif
+    - assets/img/chest/incline-dumbell-fly.gif
+    - assets/img/chest/dumbell-press.gif
+    - assets/img/chest/bench-press.gif
+    - assets/img/chest/machine-fly.gif
+    - assets/img/chest/dumbell-fly.gif
+    - assets/img/chest/low-to-high-cable.gif
+    - assets/img/chest/decline-dumbell-press.gif
+    - assets/img/chest/decline-press.gif
+    - assets/img/chest/decline-dumbell-fly.gif
     - assets/img/leg/barbell-deadlift-movement.gif
     - assets/img/leg/barbell-full-squat.gif
     - assets/img/leg/leg-extension.gif
