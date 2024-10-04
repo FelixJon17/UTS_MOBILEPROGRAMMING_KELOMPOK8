@@ -163,7 +163,7 @@ class _FunFactsScreenState extends State<FunFactsScreen> {
       appBar: AppBar(
         title: const Text("Healthy Food"),
         backgroundColor: Colors.blueAccent,
-        leading: const Icon(Icons.arrow_back),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             icon: const Icon(Icons.search),

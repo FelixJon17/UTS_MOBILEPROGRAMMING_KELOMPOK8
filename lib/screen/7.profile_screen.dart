@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserProfileScreen extends StatefulWidget {
   const UserProfileScreen({super.key});
@@ -9,34 +10,30 @@ class UserProfileScreen extends StatefulWidget {
 }
 
 class _UserProfileScreenState extends State<UserProfileScreen> {
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _ageController = TextEditingController();
-  final TextEditingController _heightController = TextEditingController();
-  final TextEditingController _weightController = TextEditingController();
+  String? _username;
+  String? _email;
 
-  // load data user
+  // Load user data
   Future<void> _loadUserData() async {
-    final prefs = await SharedPreferences.getInstance();
-    setState(() {
-      _nameController.text = prefs.getString('userName') ?? '';
-      _ageController.text = prefs.getString('userAge') ?? '';
-      _heightController.text = prefs.getString('userHeight') ?? '';
-      _weightController.text = prefs.getString('userWeight') ?? '';
-    });
+    final User? user = FirebaseAuth.instance.currentUser;
+
+    if (user != null) {
+      final uid = user.uid;
+      DocumentSnapshot userDoc =
+          await FirebaseFirestore.instance.collection('/users').doc(uid).get();
+
+      setState(() {
+        _username = userDoc['username'];
+        _email = userDoc['email'];
+      });
+    }
   }
 
-  // save data user
-  Future<void> _saveUserData() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('userName', _nameController.text);
-    await prefs.setString('userAge', _ageController.text);
-    await prefs.setString('userHeight', _heightController.text);
-    await prefs.setString('userWeight', _weightController.text);
-
-    // Menampilkan pesan
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Profile data saved!')),
-    );
+  // Logout user
+  Future<void> _logout() async {
+    await FirebaseAuth.instance.signOut();
+    // Navigate back to the login screen (or landing page)
+    Navigator.of(context).pop();
   }
 
   @override
@@ -51,47 +48,44 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       appBar: AppBar(
         title: const Text('User Profile'),
         backgroundColor: Colors.blueAccent,
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _nameController,
-              decoration: const InputDecoration(labelText: 'Name'),
-            ),
-            TextField(
-              controller: _ageController,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'Age'),
-            ),
-            TextField(
-              controller: _heightController,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'Height (cm)'),
-            ),
-            TextField(
-              controller: _weightController,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'Weight (kg)'),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _saveUserData, // Save user data when button is pressed
-              child: const Text('Save Profile'),
-            ),
-          ],
+        child: Center(
+          // Center the content
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Center vertically
+            children: [
+              Card(
+                // Add a Card for better visual
+                elevation: 4,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Username: ${_username ?? 'Loading...'}',
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        'Email: ${_email ?? 'Loading...'}',
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _logout,
+                child: const Text('Logout'),
+              ),
+            ],
+          ),
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _nameController.dispose();
-    _ageController.dispose();
-    _heightController.dispose();
-    _weightController.dispose();
-    super.dispose();
   }
 }

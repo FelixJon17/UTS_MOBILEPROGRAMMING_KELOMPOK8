@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:ui'; // Untuk efek blur
-import '0.homescreen.dart'; // Pastikan path ini benar
 import '1.login_screen.dart'; // Pastikan file login_screen.dart ada
 import '1.1 signup.dart'; // Pastikan file signup_screen.dart ada
 
@@ -13,43 +12,14 @@ class LandingPage extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          // Background image dengan efek blur
           Image.asset(
-            'assets/img/bg/bglogfitness.png', // Path gambar
+            'assets/img/bg/bglogfitness.png',
             fit: BoxFit.cover,
           ),
           BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 3.0, sigmaY: 3.0),
             child: Container(
-              color: Colors.black
-                  .withOpacity(0.3), // Memberikan opacity yang lebih gelap
-            ),
-          ),
-          Positioned(
-            top: 50,
-            right: 20,
-            child: ElevatedButton(
-              onPressed: () {
-                // Navigasi ke HomeScreen saat "Skip" ditekan
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomeScreen()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.transparent,
-                elevation: 0,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                side: const BorderSide(color: Colors.white, width: 2),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-              child: const Text(
-                'Skip',
-                style: TextStyle(color: Colors.white, fontSize: 16),
-              ),
+              color: Colors.black.withOpacity(0.3),
             ),
           ),
           Center(

@@ -10,7 +10,8 @@ class ProteinCalculatorScreen extends StatefulWidget {
 
 class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
   final _ageController = TextEditingController();
-  final _heightCmController = TextEditingController(); // Hanya menggunakan controller untuk centimeters
+  final _heightCmController =
+      TextEditingController(); // Hanya menggunakan controller untuk centimeters
   final _weightController = TextEditingController();
   String _selectedGender = 'male';
   String _activityLevel = 'Light: exercise 1-3 times/week';
@@ -63,6 +64,7 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
       appBar: AppBar(
         title: const Text('Daily Protein Calculator'),
         backgroundColor: Colors.blueAccent,
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -78,7 +80,6 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
               ),
             ),
             const SizedBox(height: 16.0),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -118,7 +119,6 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
               ],
             ),
             const SizedBox(height: 16.0),
-
             TextField(
               controller: _heightCmController,
               keyboardType: TextInputType.number,
@@ -128,7 +128,6 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
               ),
             ),
             const SizedBox(height: 16.0),
-
             TextField(
               controller: _weightController,
               keyboardType: TextInputType.number,
@@ -138,7 +137,6 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
               ),
             ),
             const SizedBox(height: 16.0),
-
             DropdownButtonFormField<String>(
               value: _activityLevel,
               decoration: const InputDecoration(
@@ -162,7 +160,6 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
               },
             ),
             const SizedBox(height: 16.0),
-
             DropdownButtonFormField<String>(
               value: _fitnessGoal,
               decoration: const InputDecoration(
@@ -186,7 +183,6 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
               },
             ),
             const SizedBox(height: 16.0),
-
             Row(
               children: [
                 Expanded(
@@ -215,7 +211,6 @@ class _ProteinCalculatorScreenState extends State<ProteinCalculatorScreen> {
               ],
             ),
             const SizedBox(height: 16.0),
-
             Text(
               _result,
               style: const TextStyle(fontSize: 18),

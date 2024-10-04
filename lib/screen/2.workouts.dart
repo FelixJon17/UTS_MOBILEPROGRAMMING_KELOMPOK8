@@ -11,6 +11,7 @@ class WorkoutsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Workouts'),
         backgroundColor: Colors.blueAccent,
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
