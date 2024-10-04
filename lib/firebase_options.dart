@@ -50,19 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDABOppC_joA03x17oKzCOg4VvIB6NdgB0',
-    appId: '1:768113891144:android:b761202373e2e77527057d',
-    messagingSenderId: '768113891144',
-    projectId: 'fitness-app-b98b0',
-    storageBucket: 'fitness-app-b98b0.appspot.com',
+    apiKey: 'AIzaSyDA0VhMQKic5vDuqhpbkvFpn3dPqKXjAuo',
+    appId: '1:212064763226:android:99acc8de20a03ed4f74763',
+    messagingSenderId: '212064763226',
+    projectId: 'fitness-app-a05a7',
+    storageBucket: 'fitness-app-a05a7.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBcKP_ViQc-zwtOk5dBItJOiCV1V_2uyIw',
-    appId: '1:768113891144:ios:4ef0382574ffdf0d27057d',
-    messagingSenderId: '768113891144',
-    projectId: 'fitness-app-b98b0',
-    storageBucket: 'fitness-app-b98b0.appspot.com',
+    apiKey: 'AIzaSyDovcCceGCB2JTDi7zv9swmiyW5yREvh3o',
+    appId: '1:212064763226:ios:a0db8beb713ca1d8f74763',
+    messagingSenderId: '212064763226',
+    projectId: 'fitness-app-a05a7',
+    storageBucket: 'fitness-app-a05a7.appspot.com',
     iosBundleId: 'com.example.fitnessapp',
   );
+
 }
