@@ -62,7 +62,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const backWorkoutsScreen(),
+                    builder: (context) => const BackWorkoutsScreen(),
                   ),
                 );
               },
@@ -80,7 +80,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ArmWorkoutsScreen(),
+                    builder: (context) => const ArmWorkoutScreen(),
                   ),
                 );
               },

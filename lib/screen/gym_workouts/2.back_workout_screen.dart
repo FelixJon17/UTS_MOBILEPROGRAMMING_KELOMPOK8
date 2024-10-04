@@ -3,12 +3,13 @@ import '2.back_workout/middle_back_screen.dart';
 import '2.back_workout/lower_back_screen.dart';
 import 'package:flutter/material.dart';
 
-class backWorkoutsScreen extends StatelessWidget {
-  const backWorkoutsScreen({super.key});
+class BackWorkoutsScreen extends StatelessWidget {
+  const BackWorkoutsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         title: const Text('Back Workouts'),
         backgroundColor: Colors.blueAccent,
@@ -18,7 +19,7 @@ class backWorkoutsScreen extends StatelessWidget {
         child: ListView(
           children: [
             HomeFeatureTile(
-              title: 'Upper back',
+              title: 'Upper Back',
               onTap: () {
                 Navigator.push(
                   context,
@@ -29,7 +30,7 @@ class backWorkoutsScreen extends StatelessWidget {
               },
             ),
             HomeFeatureTile(
-              title: 'Middle back',
+              title: 'Middle Back',
               onTap: () {
                 Navigator.push(
                   context,
@@ -60,6 +61,7 @@ class backWorkoutsScreen extends StatelessWidget {
 class HomeFeatureTile extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
+
   const HomeFeatureTile({
     super.key,
     required this.title,
@@ -71,17 +73,18 @@ class HomeFeatureTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
+      color: const Color.fromARGB(255, 246, 246, 246), //warna card
       child: InkWell(
         onTap: onTap,
         child: Container(
           padding: const EdgeInsets.all(20.0), // Padding untuk seluruh konten
-          height: 120, // Tinggi card
+          height: 180, // Tinggi card
           child: Row(
             children: [
               // Gambar di sebelah kiri
               Container(
-                width: 70, // Lebar gambar
-                height: 70, // Tinggi gambar
+                width: 100, // Lebar gambar
+                height: 100, // Tinggi gambar
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
                       10), // Membuat sudut gambar melengkung

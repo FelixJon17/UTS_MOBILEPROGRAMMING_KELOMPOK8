@@ -1,15 +1,16 @@
 import '3.arm_workout/biceps_workout.dart';
 import '3.arm_workout/triceps_workout.dart';
 import '3.arm_workout/forearms_workout.dart';
-import '3.arm_workout/shoulder_workkout_screen.dart';
+import '3.arm_workout/shoulder_workout_screen.dart';
 import 'package:flutter/material.dart';
 
-class ArmWorkoutsScreen extends StatelessWidget {
-  const ArmWorkoutsScreen({super.key});
+class ArmWorkoutScreen extends StatelessWidget {
+  const ArmWorkoutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         title: const Text('Arm Workouts'),
         backgroundColor: Colors.blueAccent,
@@ -72,6 +73,7 @@ class ArmWorkoutsScreen extends StatelessWidget {
 class HomeFeatureTile extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
+
   const HomeFeatureTile({
     super.key,
     required this.title,
@@ -83,17 +85,18 @@ class HomeFeatureTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
+      color: const Color.fromARGB(255, 246, 246, 246), //warna card
       child: InkWell(
         onTap: onTap,
         child: Container(
           padding: const EdgeInsets.all(20.0), // Padding untuk seluruh konten
-          height: 120, // Tinggi card
+          height: 180, // Tinggi card
           child: Row(
             children: [
               // Gambar di sebelah kiri
               Container(
-                width: 70, // Lebar gambar
-                height: 70, // Tinggi gambar
+                width: 150, // Lebar gambar
+                height: 150, // Tinggi gambar
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
                       10), // Membuat sudut gambar melengkung
