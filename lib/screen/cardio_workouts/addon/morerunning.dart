@@ -10,11 +10,11 @@ class LearnMoreRunningScreen extends StatelessWidget {
         title: const Text('Learn More: Running'),
         backgroundColor: Colors.blueAccent,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
               'Recommended Running Routine:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

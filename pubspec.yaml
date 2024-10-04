@@ -70,8 +70,6 @@ flutter:
     - assets/img/cardio/cycling.gif
     - assets/img/arm/bicep-curls.gif
     - assets/img/arm/tricep-pushdown.gif
-    - assets/img/back/barbell-bent-over-row.gif
-    - assets/img/back/wide-grip-lat-pulldown.gif
     - assets/img/chest/barbell-decline-bench-press.gif
     - assets/img/chest/incline-dumbell-press.gif
     - assets/img/chest/incline-bench-press.gif
@@ -85,6 +83,13 @@ flutter:
     - assets/img/chest/decline-dumbell-press.gif
     - assets/img/chest/decline-press.gif
     - assets/img/chest/decline-dumbell-fly.gif
+    - assets/img/back/barbell-shrugs.gif
+    - assets/img/back/barbell-bent-over-row.gif
+    - assets/img/back/t-bar-row.gif
+    - assets/img/back/dumbell-bent-over-row.gif
+    - assets/img/back/single-dumbell-row.gif
+    - assets/img/back/seated-cable-row.gif
+    - assets/img/back/wide-grip-lat-pulldown.gif
     - assets/img/leg/barbell-deadlift-movement.gif
     - assets/img/leg/barbell-full-squat.gif
     - assets/img/leg/leg-extension.gif

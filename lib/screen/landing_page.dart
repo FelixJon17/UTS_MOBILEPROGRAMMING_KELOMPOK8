@@ -92,7 +92,7 @@ class LandingPage extends StatelessWidget {
                     'Login',
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.blueAccent,
+                      color: Color.fromARGB(255, 0, 0, 0),
                     ),
                   ),
                 ),

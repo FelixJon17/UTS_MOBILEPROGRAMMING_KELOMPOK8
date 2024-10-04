@@ -53,7 +53,7 @@ class FlutterApp extends StatelessWidget {
                   child: Container(
                     width:
                         MediaQuery.of(context).size.width * _widthFactor.value,
-                    child: Column(
+                    child: const Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -80,7 +80,7 @@ class FunFactsScreen extends StatefulWidget {
 
 class _FunFactsScreenState extends State<FunFactsScreen> {
   final List<FoodItem> _allFoods = [
-    FoodItem(
+    const FoodItem(
       imageUrl: "https://picsum.photos/200/300",
       title: "Sayur Salad Bumbu Rempah",
       time: "20 Mins",
@@ -88,7 +88,7 @@ class _FunFactsScreenState extends State<FunFactsScreen> {
       protein: "80 Protein",
       rating: "5.0",
     ),
-    FoodItem(
+    const FoodItem(
       imageUrl: "https://picsum.photos/200/301",
       title: "Ketoprak Telor",
       time: "12 Mins",
@@ -96,7 +96,7 @@ class _FunFactsScreenState extends State<FunFactsScreen> {
       protein: "80 Protein",
       rating: "5.0",
     ),
-    FoodItem(
+    const FoodItem(
       imageUrl: "https://picsum.photos/200/302",
       title: "Crunchy Nut Coleslaw",
       time: "12 Mins",
