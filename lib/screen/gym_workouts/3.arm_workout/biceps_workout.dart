@@ -7,24 +7,27 @@ class BicepsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bicep Workouts'),
-        backgroundColor: const Color.fromARGB(255, 116, 122, 133),
+        title: const Text('Biceps Workouts'),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: const [
             BicepsTile(
-              title: 'Biceps Curl',
+              title: 'Biceps Curls',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/arn/biceps-curls.gif',
             ),
             BicepsTile(
               title: 'Spider Curl',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/arm/biceps-curls.gif',
             ),
             BicepsTile(
               title: 'Cable Curl',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/arm/biceps-curls.gif',
             ),
           ],
         ),
@@ -36,11 +39,13 @@ class BicepsScreen extends StatelessWidget {
 class BicepsTile extends StatelessWidget {
   final String title;
   final String description;
+  final String assetPath;
 
   const BicepsTile({
     super.key,
     required this.title,
     required this.description,
+    required this.assetPath,
   });
 
   @override
@@ -48,14 +53,41 @@ class BicepsTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      child: ListTile(
-        leading: const Icon(Icons.fitness_center,
-            size: 40, color: Colors.blueAccent),
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Image.asset(
+              assetPath,
+              height: 160, // Ukuran tinggi gambar, bisa disesuaikan
+              width: 160, // Ukuran lebar gambar, bisa disesuaikan
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(width: 16), // Spasi antara gambar dan teks
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start, // Text rata kiri
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    description,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-        subtitle: Text(description),
       ),
     );
   }

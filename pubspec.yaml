@@ -70,9 +70,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/img/cardio/cycling.gif
-    - assets/img/arm/bicep-curls.gif
-    - assets/img/arm/tricep-pushdown.gif
     - assets/img/chest/barbell-decline-bench-press.gif
     - assets/img/chest/incline-dumbell-press.gif
     - assets/img/chest/incline-bench-press.gif
@@ -95,6 +92,9 @@ flutter:
     - assets/img/back/wide-grip-lat-pulldown.gif
     - assets/img/back/deadlift.gif
     - assets/img/back/kettlebell-swing.gif
+    - assets/img/cardio/cycling.gif
+    - assets/img/arm/bicep-curls.gif
+    - assets/img/arm/tricep-pushdown.gif
     - assets/img/leg/barbell-deadlift-movement.gif
     - assets/img/leg/barbell-full-squat.gif
     - assets/img/leg/leg-extension.gif
