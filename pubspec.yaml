@@ -134,8 +134,9 @@ flutter:
     - assets/img/bmitable.png
     - assets/img/weight.png
     - assets/img/height.png
-
-
+    - assets/img/arm/HackSquat.gif
+    - assets/img/arm/legpress.gif
+    - assets/img/arm/legext.gif
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

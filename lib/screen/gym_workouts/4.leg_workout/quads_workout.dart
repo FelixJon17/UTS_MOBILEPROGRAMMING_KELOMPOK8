@@ -1,3 +1,4 @@
+import 'package:fitnessapp/screen/gym_workouts/4.leg_workout/quads_Workout.dart';
 import 'package:flutter/material.dart';
 
 class QuadsScreen extends StatelessWidget {
@@ -7,8 +8,8 @@ class QuadsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Quads Workouts'),
-        backgroundColor: const Color.fromARGB(255, 116, 122, 133),
+        title: const Text('Biceps Workouts'),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -17,15 +18,19 @@ class QuadsScreen extends StatelessWidget {
             QuadsTile(
               title: 'Hack Squat',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/arm/HackSquat.gif',
             ),
             QuadsTile(
               title: 'Leg Extension',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/arm/legext.gif',
             ),
             QuadsTile(
               title: 'Leg Press',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/arm/legpress.gif',
             ),
+           
           ],
         ),
       ),
@@ -36,11 +41,13 @@ class QuadsScreen extends StatelessWidget {
 class QuadsTile extends StatelessWidget {
   final String title;
   final String description;
+  final String assetPath;
 
   const QuadsTile({
     super.key,
     required this.title,
     required this.description,
+    required this.assetPath,
   });
 
   @override
@@ -48,14 +55,41 @@ class QuadsTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      child: ListTile(
-        leading: const Icon(Icons.fitness_center,
-            size: 40, color: Colors.blueAccent),
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Image.asset(
+              assetPath,
+              height: 160, // Ukuran tinggi gambar, bisa disesuaikan
+              width: 160, // Ukuran lebar gambar, bisa disesuaikan
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(width: 16), // Spasi antara gambar dan teks
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start, // Text rata kiri
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    description,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-        subtitle: Text(description),
       ),
     );
   }
