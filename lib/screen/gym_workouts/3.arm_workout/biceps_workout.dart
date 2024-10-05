@@ -15,19 +15,24 @@ class BicepsScreen extends StatelessWidget {
         child: ListView(
           children: const [
             BicepsTile(
-              title: 'Biceps Curls',
+              title: 'Bicep Curls',
               description: '4 x 12 reps',
-              assetPath: 'assets/img/arn/biceps-curls.gif',
+              assetPath: 'assets/img/arm/bicep-curls.gif',
             ),
             BicepsTile(
               title: 'Spider Curl',
               description: '4 x 12 reps',
-              assetPath: 'assets/img/arm/biceps-curls.gif',
+              assetPath: 'assets/img/arm/spider-curls.gif',
+            ),
+            BicepsTile(
+              title: 'Hammer Curl',
+              description: '4 x 12 reps',
+              assetPath: 'assets/img/arm/hammer-curl.gif',
             ),
             BicepsTile(
               title: 'Cable Curl',
               description: '4 x 12 reps',
-              assetPath: 'assets/img/arm/biceps-curls.gif',
+              assetPath: 'assets/img/arm/bicep-curls.gif',
             ),
           ],
         ),

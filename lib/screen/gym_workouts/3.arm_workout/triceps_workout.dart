@@ -7,8 +7,8 @@ class TricepsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tricep Workouts'),
-        backgroundColor: const Color.fromARGB(255, 116, 122, 133),
+        title: const Text('Triceps Workouts'),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -17,14 +17,17 @@ class TricepsScreen extends StatelessWidget {
             TricepsTile(
               title: 'Triceps Pushdown',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/arm/tricep-pushdown.gif',
             ),
             TricepsTile(
-              title: 'Skull Crusher',
+              title: 'Skull Crushers',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/arm/skull-crushers.gif',
             ),
             TricepsTile(
-              title: ' Overhead Triceps Extension',
+              title: 'Overhead Extension',
               description: '4 x 12 reps',
+              assetPath: 'assets/img/arm/overhead-tricep-extension.gif',
             ),
           ],
         ),
@@ -36,11 +39,13 @@ class TricepsScreen extends StatelessWidget {
 class TricepsTile extends StatelessWidget {
   final String title;
   final String description;
+  final String assetPath;
 
   const TricepsTile({
     super.key,
     required this.title,
     required this.description,
+    required this.assetPath,
   });
 
   @override
@@ -48,14 +53,41 @@ class TricepsTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      child: ListTile(
-        leading: const Icon(Icons.fitness_center,
-            size: 40, color: Colors.blueAccent),
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Image.asset(
+              assetPath,
+              height: 160, // Ukuran tinggi gambar, bisa disesuaikan
+              width: 160, // Ukuran lebar gambar, bisa disesuaikan
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(width: 16), // Spasi antara gambar dan teks
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start, // Text rata kiri
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    description,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-        subtitle: Text(description),
       ),
     );
   }

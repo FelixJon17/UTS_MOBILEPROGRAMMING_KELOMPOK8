@@ -94,7 +94,25 @@ flutter:
     - assets/img/back/kettlebell-swing.gif
     - assets/img/cardio/cycling.gif
     - assets/img/arm/bicep-curls.gif
+    - assets/img/arm/spider-curls.gif
+    - assets/img/arm/cable-curl.gif
+    - assets/img/arm/wrist-curl.gif
+    - assets/img/arm/hammer-curl.gif
+    - assets/img/arm/reverse-curl.gif
     - assets/img/arm/tricep-pushdown.gif
+    - assets/img/arm/skull-crushers.gif
+    - assets/img/arm/overhead-tricep-extension.gif
+    - assets/img/arm/dumbell-shoulder-press.gif
+    - assets/img/arm/arnold-press.gif
+    - assets/img/arm/barbell-shoulder-press.gif
+    - assets/img/arm/dumbell-front-raises.gif
+    - assets/img/arm/lateral-raises.gif
+    - assets/img/arm/cable-lateral-raises.gif
+    - assets/img/arm/lateral-raises.gif
+    - assets/img/arm/cuban-press.gif
+    - assets/img/arm/upright-row.gif
+    - assets/img/arm/face-pull.gif
+    - assets/img/arm/reverse-fly.gif
     - assets/img/leg/barbell-deadlift-movement.gif
     - assets/img/leg/barbell-full-squat.gif
     - assets/img/leg/leg-extension.gif

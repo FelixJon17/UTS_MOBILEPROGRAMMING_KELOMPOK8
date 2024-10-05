@@ -3,24 +3,23 @@ import 'package:fitnessapp/screen/gym_workouts/3.arm_workout/lateral_delts_worko
 import 'package:fitnessapp/screen/gym_workouts/3.arm_workout/rear_delts_workout.dart';
 import 'package:flutter/material.dart';
 
-class ShoulderWorkoutsScreen extends StatelessWidget {
-  const ShoulderWorkoutsScreen({super.key});
+class ShoulderWorkoutScreen extends StatelessWidget {
+  const ShoulderWorkoutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
-        title: const Text('Shoulder Workouts'),
-        backgroundColor: const Color.fromARGB(255, 116, 122, 133),
+        title: const Text('Arm Workouts'),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
             HomeFeatureTile(
-              icon: Icons.fitness_center,
               title: 'Front Delts',
-              description: 'Targets the upper shoulder',
               onTap: () {
                 Navigator.push(
                   context,
@@ -31,9 +30,7 @@ class ShoulderWorkoutsScreen extends StatelessWidget {
               },
             ),
             HomeFeatureTile(
-              icon: Icons.fitness_center,
               title: 'Lateral Delts',
-              description: 'Targets the middle shoulder',
               onTap: () {
                 Navigator.push(
                   context,
@@ -44,9 +41,7 @@ class ShoulderWorkoutsScreen extends StatelessWidget {
               },
             ),
             HomeFeatureTile(
-              icon: Icons.fitness_center,
               title: 'Rear Delts',
-              description: 'Targets the rear delts',
               onTap: () {
                 Navigator.push(
                   context,
@@ -64,16 +59,12 @@ class ShoulderWorkoutsScreen extends StatelessWidget {
 }
 
 class HomeFeatureTile extends StatelessWidget {
-  final IconData icon;
   final String title;
-  final String description;
   final VoidCallback onTap;
 
   const HomeFeatureTile({
     super.key,
-    required this.icon,
     required this.title,
-    required this.description,
     required this.onTap,
   });
 
@@ -82,14 +73,49 @@ class HomeFeatureTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      child: ListTile(
-        leading: Icon(icon, size: 40, color: Colors.blueAccent),
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-        subtitle: Text(description),
+      color: const Color.fromARGB(255, 246, 246, 246), //warna card
+      child: InkWell(
         onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(20.0), // Padding untuk seluruh konten
+          height: 180, // Tinggi card
+          child: Row(
+            children: [
+              // Gambar di sebelah kiri
+              Container(
+                width: 150, // Lebar gambar
+                height: 150, // Tinggi gambar
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                      10), // Membuat sudut gambar melengkung
+                ),
+                child: Image.asset(
+                  'assets/img/arm/arm.png', // Path gambar
+                  fit: BoxFit.cover, // Agar gambar memenuhi container
+                ),
+              ),
+              const SizedBox(width: 20), // Jarak antara gambar dan teks
+
+              // Bagian teks di sebelah kanan
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20, // Ukuran font lebih besar
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

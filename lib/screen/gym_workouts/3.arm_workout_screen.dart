@@ -58,7 +58,7 @@ class ArmWorkoutScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ShoulderWorkoutsScreen(),
+                    builder: (context) => const ShoulderWorkoutScreen(),
                   ),
                 );
               },
