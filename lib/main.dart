@@ -1,5 +1,4 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fitnessapp/screen/0.homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnessapp/screen/landing_page.dart';
 import 'firebase_options.dart';
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const LandingPage(),
     );
   }
 }

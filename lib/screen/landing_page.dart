@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:ui'; // Untuk efek blur
-import '1.login_screen.dart'; // Pastikan file login_screen.dart ada
-import '1.1 signup.dart'; // Pastikan file signup_screen.dart ada
+import 'dart:ui';
+import '1.login_screen.dart';
+import '1.1 signup.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
