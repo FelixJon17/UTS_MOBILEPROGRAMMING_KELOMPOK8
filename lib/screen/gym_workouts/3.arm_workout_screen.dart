@@ -10,7 +10,6 @@ class ArmWorkoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         title: const Text('Arm Workouts'),
         backgroundColor: Colors.blueAccent,
@@ -85,7 +84,6 @@ class HomeFeatureTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      color: const Color.fromARGB(255, 246, 246, 246), //warna card
       child: InkWell(
         onTap: onTap,
         child: Container(
