@@ -74,7 +74,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
                 height: 100,
               ),
               title: 'Arm Workouts',
-              description: 'Trains biceps, triceps, and forearms',
+              description: 'Trains biceps, triceps, forearms, and shoulder',
               onTap: () {
                 _onWorkoutSelected('Arms');
                 Navigator.push(
