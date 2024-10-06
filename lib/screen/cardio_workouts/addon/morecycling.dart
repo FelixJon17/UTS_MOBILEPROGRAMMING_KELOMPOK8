@@ -28,12 +28,12 @@ class LearnMoreCyclingScreen extends StatelessWidget {
                   children: [
                     TileLayer(
                       urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                      subdomains: ['a', 'b', 'c'],
+                      subdomains: const ['a', 'b', 'c'],
                     ),
                     MarkerLayer(
                       markers: [
                         Marker(
-                          point: LatLng(-6.2088, 106.8456), // Sudirman-Thamrin, Jakarta
+                          point: LatLng(-6.2088, 106.8456), 
                           builder: (ctx) => const Icon(
                             Icons.location_on,
                             color: Colors.red,
@@ -41,7 +41,7 @@ class LearnMoreCyclingScreen extends StatelessWidget {
                           ),
                         ),
                         Marker(
-                          point: LatLng(-8.5069, 115.2625), // Ubud Countryside, Bali
+                          point: LatLng(-8.5069, 115.2625), 
                           builder: (ctx) => const Icon(
                             Icons.location_on,
                             color: Colors.red,
@@ -49,7 +49,7 @@ class LearnMoreCyclingScreen extends StatelessWidget {
                           ),
                         ),
                         Marker(
-                          point: LatLng(-0.3095, 100.3692), // Bukit Tinggi, West Sumatra
+                          point: LatLng(-0.3095, 100.3692), 
                           builder: (ctx) => const Icon(
                             Icons.location_on,
                             color: Colors.red,

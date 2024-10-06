@@ -28,12 +28,12 @@ class LearnMoreJoggingScreen extends StatelessWidget {
                   children: [
                     TileLayer(
                       urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                      subdomains: ['a', 'b', 'c'],
+                      subdomains: const ['a', 'b', 'c'],
                     ),
                     MarkerLayer(
                       markers: [
                         Marker(
-                          point: LatLng(-6.1751, 106.8272), // Monas Park, Jakarta
+                          point: LatLng(-6.1751, 106.8272), 
                           builder: (ctx) => const Icon(
                             Icons.location_on,
                             color: Colors.red,
@@ -41,7 +41,7 @@ class LearnMoreJoggingScreen extends StatelessWidget {
                           ),
                         ),
                         Marker(
-                          point: LatLng(-6.3017, 106.8956), // Taman Mini Indonesia, Jakarta
+                          point: LatLng(-6.3017, 106.8956), 
                           builder: (ctx) => const Icon(
                             Icons.location_on,
                             color: Colors.red,
@@ -49,7 +49,7 @@ class LearnMoreJoggingScreen extends StatelessWidget {
                           ),
                         ),
                         Marker(
-                          point: LatLng(-6.9175, 107.6191), // Bandung
+                          point: LatLng(-6.9175, 107.6191), 
                           builder: (ctx) => const Icon(
                             Icons.location_on,
                             color: Colors.red,

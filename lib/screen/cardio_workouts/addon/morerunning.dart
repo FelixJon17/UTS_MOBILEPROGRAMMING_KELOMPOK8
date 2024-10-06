@@ -42,7 +42,7 @@ class LearnMoreRunningScreen extends StatelessWidget {
                   children: [
                     TileLayer(
                       urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                      subdomains: ['a', 'b', 'c'],
+                      subdomains: const ['a', 'b', 'c'],
                     ),
                     MarkerLayer(
                       markers: [
