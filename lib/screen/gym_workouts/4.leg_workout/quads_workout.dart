@@ -1,4 +1,3 @@
-import 'package:fitnessapp/screen/gym_workouts/4.leg_workout/quads_Workout.dart';
 import 'package:flutter/material.dart';
 
 class QuadsScreen extends StatelessWidget {
