@@ -152,7 +152,7 @@ flutter:
     - assets/img/logo/height.png
     - assets/img/cardio/Cycling.png
     - assets/img/cardio/Jogging.jpg
-    - assets/img/cardio/Running.jpg
+    - assets/img/cardio/Running.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

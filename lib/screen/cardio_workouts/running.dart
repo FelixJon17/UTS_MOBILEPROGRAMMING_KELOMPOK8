@@ -12,7 +12,7 @@ class RunningWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(
-            'assets/img/cardio/Running.jpg',
+            'assets/img/cardio/Running.png',
             width: 80,
             height: 80,
           ),
