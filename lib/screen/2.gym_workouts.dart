@@ -94,7 +94,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
               title: 'Leg Workouts',
               description: 'Trains quads, hamstrings, and calves',
               onTap: () {
-                _onWorkoutSelected('Legs');
+                _onWorkoutSelected('Leg');
                 Navigator.push(
                   context,
                   MaterialPageRoute(
