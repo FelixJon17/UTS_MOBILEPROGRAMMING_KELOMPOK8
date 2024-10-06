@@ -43,7 +43,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
 
   Widget _buildBMITable() {
     return Image.asset(
-      'assets/img/bmitable.png',
+      'assets/img/logo/bmitable.png',
       fit: BoxFit.cover,
     );
   }
@@ -123,7 +123,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                   padding:
                       const EdgeInsets.all(8.0), // Padding to adjust icon size
                   child: Image.asset(
-                    'assets/img/weight.png', // Your weight icon image
+                    'assets/img/logo/weight.png', // Your weight icon image
                     width: 24,
                     height: 24,
                   ),
@@ -153,7 +153,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                 prefixIcon: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
-                    'assets/img/height.png',
+                    'assets/img/logo/height.png',
                     width: 24,
                     height: 24,
                   ),
@@ -176,7 +176,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
             ElevatedButton(
               onPressed: _calculateBMI,
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 63, 103, 123),
+                backgroundColor: const Color.fromARGB(255, 90, 157, 190),
                 padding: const EdgeInsets.symmetric(vertical: 14.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),

@@ -98,7 +98,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const LegWorkoutsScreen(),
+                    builder: (context) => const LegWorkoutScreen(),
                   ),
                 ); // Navigate to leg workouts
               },

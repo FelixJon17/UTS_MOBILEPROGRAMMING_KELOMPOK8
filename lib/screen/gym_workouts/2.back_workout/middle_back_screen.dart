@@ -27,7 +27,7 @@ class MiddleBackScreen extends StatelessWidget {
             MiddleBackTile(
               title: 'Seated Cable Row',
               description: '4 x 12 reps',
-              assetPath: 'assets/img/back/barbell-bent-over-row.gif',
+              assetPath: 'assets/img/back/seated-cable-row.gif',
             ),
           ],
         ),
