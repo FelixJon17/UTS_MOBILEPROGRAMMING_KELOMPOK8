@@ -24,6 +24,11 @@ class LowerBackScreen extends StatelessWidget {
               description: '4 x 12 reps',
               assetPath: 'assets/img/back/kettlebell-swing.gif',
             ),
+            LowerBackTile(
+              title: 'Barbell Bent Over Row',
+              description: '4 x 12 reps',
+              assetPath: 'assets/img/back/barbell-bent-over-row.gif',
+            ),
           ],
         ),
       ),
