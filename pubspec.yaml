@@ -124,32 +124,32 @@ flutter:
     - assets/img/leg/barbell-full-squat.gif
     - assets/img/leg/leg-extension.gif
     - assets/img/leg/leg-press.gif
+    - assets/img/leg/HackSquat.gif
+    - assets/img/leg/legpress.gif
+    - assets/img/leg/legext.gif
+    - assets/img/leg/SeatedLegCurl.gif
+    - assets/img/leg/frontsquat.gif
+    - assets/img/leg/bulgsquat.gif
+    - assets/img/leg/legcalfraise.gif
+    - assets/img/leg/ProneLegCurl.gif
+    - assets/img/leg/scalfraise.gif
     - assets/img/bg/bglogfitness.png
     - assets/img/bg/gympic.jpg
     - assets/img/bg/running.jpg
     - assets/img/bg/gymbg.jpg
-    - assets/img/bmi.png
-    - assets/img/muscle.png
-    - assets/img/protein.png
-    - assets/img/bulb.png
-    - assets/img/profile.png
-    - assets/img/chest/chest.png
-    - assets/img/back/back.png
-    - assets/img/arm/arm.png
-    - assets/img/shoulder/shoulder.png
-    - assets/img/leg/leg.png
-    - assets/img/bmitable.png
-    - assets/img/weight.png
-    - assets/img/height.png
-    - assets/img/arm/HackSquat.gif
-    - assets/img/arm/legpress.gif
-    - assets/img/arm/legext.gif
-    - assets/img/arm/SeatedLegCurl.gif
-    - assets/img/arm/frontsquat.gif
-    - assets/img/arm/bulgsquat.gif
-    - assets/img/arm/legcalfraise.gif
-    - assets/img/arm/ProneLegCurl.gif
-    - assets/img/arm/scalfraise.gif
+    - assets/img/logo/bmi.png
+    - assets/img/logo/muscle.png
+    - assets/img/logo/protein.png
+    - assets/img/logo/bulb.png
+    - assets/img/logo/profile.png
+    - assets/img/logo/chest.png
+    - assets/img/logo/back.png
+    - assets/img/logo/arm.png
+    - assets/img/logo/shoulder.png
+    - assets/img/logo/leg.png
+    - assets/img/logo/bmitable.png
+    - assets/img/logo/weight.png
+    - assets/img/logo/height.png
     - assets/img/cardio/Cycling.png
     - assets/img/cardio/Jogging.jpg
     - assets/img/cardio/Running.jpg
