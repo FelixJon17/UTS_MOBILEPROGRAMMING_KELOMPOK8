@@ -17,14 +17,17 @@ class HamstringScreen extends StatelessWidget {
             HamstringTile(
               title: 'Bulgarian Split Squats',
               description: '4 x 12 reps',
+               assetPath: 'assets/img/arm/bulgsquat.gif',
             ),
             HamstringTile(
               title: 'Seated Hamstring curls',
               description: '4 x 12 reps',
+               assetPath: 'assets/img/arm/SeatedLegCurl.gif',
             ),
             HamstringTile(
               title: 'Prone Leg Curls',
               description: '4 x 12 reps',
+               assetPath: 'assets/img/arm/ProneLegCurl.gif',
             ),
           ],
         ),
@@ -36,26 +39,55 @@ class HamstringScreen extends StatelessWidget {
 class HamstringTile extends StatelessWidget {
   final String title;
   final String description;
+  final String assetPath;
 
   const HamstringTile({
     super.key,
     required this.title,
     required this.description,
+    required this.assetPath,
   });
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      child: ListTile(
-        leading: const Icon(Icons.fitness_center,
-            size: 40, color: Colors.blueAccent),
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Image.asset(
+              assetPath,
+              height: 160, // Ukuran tinggi gambar, bisa disesuaikan
+              width: 160, // Ukuran lebar gambar, bisa disesuaikan
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(width: 16), // Spasi antara gambar dan teks
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start, // Text rata kiri
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    description,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-        subtitle: Text(description),
       ),
     );
   }
