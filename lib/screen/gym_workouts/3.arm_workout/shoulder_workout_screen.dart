@@ -9,7 +9,6 @@ class ShoulderWorkoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         title: const Text('Shoulder Workouts'),
         backgroundColor: Colors.blueAccent,
@@ -73,7 +72,6 @@ class HomeFeatureTile extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 10),
-      color: const Color.fromARGB(255, 246, 246, 246), //warna card
       child: InkWell(
         onTap: onTap,
         child: Container(
@@ -90,7 +88,7 @@ class HomeFeatureTile extends StatelessWidget {
                       10), // Membuat sudut gambar melengkung
                 ),
                 child: Image.asset(
-                  'assets/img/arm/arm.png', // Path gambar
+                  'assets/img/logo/arm.png', // Path gambar
                   fit: BoxFit.cover, // Agar gambar memenuhi container
                 ),
               ),
