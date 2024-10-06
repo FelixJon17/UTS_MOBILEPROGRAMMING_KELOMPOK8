@@ -8,6 +8,8 @@ class FlutterApp extends StatelessWidget {
   final ValueNotifier<bool> _dark = ValueNotifier<bool>(true);
   final ValueNotifier<double> _widthFactor = ValueNotifier<double>(1.0);
 
+  FlutterApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -81,7 +83,7 @@ class FunFactsScreen extends StatefulWidget {
 class _FunFactsScreenState extends State<FunFactsScreen> {
   final List<FoodItem> _allFoods = [
     const FoodItem(
-      imageUrl: "https://picsum.photos/200/300",
+      imageUrl: 'assets/img/chest/saladsayur.png',
       title: "Sayur Salad Bumbu Rempah",
       time: "20 Mins",
       calories: "100 Cal",
@@ -89,7 +91,7 @@ class _FunFactsScreenState extends State<FunFactsScreen> {
       rating: "5.0",
     ),
     const FoodItem(
-      imageUrl: "https://picsum.photos/200/301",
+      imageUrl: 'assets/img/chest/ketopraktelur.png',
       title: "Ketoprak Telor",
       time: "12 Mins",
       calories: "120 Cal",
@@ -97,12 +99,28 @@ class _FunFactsScreenState extends State<FunFactsScreen> {
       rating: "5.0",
     ),
     const FoodItem(
-      imageUrl: "https://picsum.photos/200/302",
+      imageUrl: 'assets/img/chest/crunchynutcoleslaw.png',
       title: "Crunchy Nut Coleslaw",
       time: "12 Mins",
       calories: "120 Cal",
       protein: "80 Protein",
       rating: "4.8",
+    ),
+    const FoodItem(
+      imageUrl: 'assets/img/chest/nasigoreng.png',
+      title: "Nasi Goreng Kampung",
+      time: "15 Mins",
+      calories: "150 Cal",
+      protein: "70 Protein",
+      rating: "4.9",
+    ),
+    const FoodItem(
+      imageUrl: 'assets/img/chest/sateayam.png',
+      title: "Sate Ayam",
+      time: "30 Mins",
+      calories: "300 Cal",
+      protein: "90 Protein",
+      rating: "5.0",
     ),
   ];
 
@@ -142,13 +160,11 @@ class _FunFactsScreenState extends State<FunFactsScreen> {
   void _toggleSave(FoodItem food) {
     setState(() {
       if (_savedFoods.contains(food)) {
-        // Remove from saved list if already saved
         _savedFoods.remove(food);
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text('${food.title} removed from saved!'),
         ));
       } else {
-        // Add to saved list if not already saved
         _savedFoods.add(food);
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text('${food.title} saved!'),
@@ -157,11 +173,17 @@ class _FunFactsScreenState extends State<FunFactsScreen> {
     });
   }
 
+  void _sortFoodsByAZ() {
+    setState(() {
+      _displayedFoods.sort((a, b) => a.title.compareTo(b.title));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Healthy Food"),
+        title: const Text("Fun Facts Protein"),
         backgroundColor: Colors.blueAccent,
         automaticallyImplyLeading: false,
         actions: [
@@ -170,6 +192,10 @@ class _FunFactsScreenState extends State<FunFactsScreen> {
             onPressed: () {
               _searchFoods(_searchController.text);
             },
+          ),
+          IconButton(
+            icon: const Icon(Icons.sort_by_alpha),
+            onPressed: _sortFoodsByAZ, // Sort A-Z
           ),
           IconButton(
             icon: const Icon(Icons.filter_list),
@@ -258,8 +284,12 @@ class FoodCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: [
-          Image.network(food.imageUrl,
-              width: 100, height: 100, fit: BoxFit.cover),
+          Image.asset(
+            food.imageUrl,
+            width: 100,
+            height: 100,
+            fit: BoxFit.cover,
+          ), // Load image from assets
           const SizedBox(width: 10),
           Expanded(
             child: Column(
@@ -281,10 +311,10 @@ class FoodCard extends StatelessWidget {
           ),
           IconButton(
             icon: Icon(
-              isSaved ? Icons.bookmark : Icons.bookmark_border, // Toggle icon
-              color: isSaved ? Colors.blue : Colors.grey, // Change color
+              isSaved ? Icons.bookmark : Icons.bookmark_border,
+              color: isSaved ? Colors.blue : Colors.grey,
             ),
-            onPressed: onToggleSave, // Toggle save status on press
+            onPressed: onToggleSave,
           ),
         ],
       ),
