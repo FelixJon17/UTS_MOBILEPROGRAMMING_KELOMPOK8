@@ -7,7 +7,7 @@ class RearShoulderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('RearShoulder Workouts'),
+        title: const Text('Rear Delts Workouts'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(

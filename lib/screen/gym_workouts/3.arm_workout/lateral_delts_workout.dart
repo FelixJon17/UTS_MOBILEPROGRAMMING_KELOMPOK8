@@ -7,7 +7,7 @@ class LateralShoulderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LateralShoulder Workouts'),
+        title: const Text('Lateral Delts Workouts'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(

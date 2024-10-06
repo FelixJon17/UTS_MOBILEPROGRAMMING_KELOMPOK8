@@ -11,7 +11,7 @@ class ShoulderWorkoutScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
-        title: const Text('Arm Workouts'),
+        title: const Text('Shoulder Workouts'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(

@@ -7,7 +7,7 @@ class UpperBackScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Back Workouts'),
+        title: const Text('Upper Back Workouts'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
@@ -20,7 +20,7 @@ class UpperBackScreen extends StatelessWidget {
               assetPath: 'assets/img/back/barbell-shrugs.gif',
             ),
             UpperBackTile(
-              title: 'Single Arm Dumbell Row',
+              title: 'Single Arm Dumbbell Row',
               description: '4 x 12 reps',
               assetPath: 'assets/img/back/single-dumbell-row.gif',
             ),

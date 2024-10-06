@@ -7,7 +7,7 @@ class UpperChestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chest Workouts'),
+        title: const Text('Upper Chest Workouts'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(

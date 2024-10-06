@@ -7,7 +7,7 @@ class FrontShoulderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('FrontShoulder Workouts'),
+        title: const Text('Front Delts Workouts'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(

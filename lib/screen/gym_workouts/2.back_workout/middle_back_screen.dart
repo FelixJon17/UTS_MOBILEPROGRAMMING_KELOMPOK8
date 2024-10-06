@@ -7,7 +7,7 @@ class MiddleBackScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Back Workouts'),
+        title: const Text('Middle Back Workouts'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(

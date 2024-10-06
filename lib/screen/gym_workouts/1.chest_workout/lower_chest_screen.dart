@@ -7,7 +7,7 @@ class LowerChestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chest Workouts'),
+        title: const Text('Lower Chest Workouts'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
@@ -25,7 +25,7 @@ class LowerChestScreen extends StatelessWidget {
               assetPath: 'assets/img/chest/decline-press.gif',
             ),
             UpperChestTile(
-              title: 'Decline Dumbell Fly',
+              title: 'Decline Dumbbell Fly',
               description: '4 x 12 reps',
               assetPath: 'assets/img/chest/decline-dumbell-fly.gif',
             ),

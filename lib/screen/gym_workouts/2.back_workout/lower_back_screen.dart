@@ -7,7 +7,7 @@ class LowerBackScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Back Workouts'),
+        title: const Text('Lower Back Workouts'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
