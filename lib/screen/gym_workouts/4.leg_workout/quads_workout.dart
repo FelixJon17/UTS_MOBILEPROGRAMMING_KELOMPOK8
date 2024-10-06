@@ -8,7 +8,7 @@ class QuadsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Biceps Workouts'),
+        title: const Text('Quads Workouts'),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
@@ -30,7 +30,6 @@ class QuadsScreen extends StatelessWidget {
               description: '4 x 12 reps',
               assetPath: 'assets/img/arm/legpress.gif',
             ),
-           
           ],
         ),
       ),
