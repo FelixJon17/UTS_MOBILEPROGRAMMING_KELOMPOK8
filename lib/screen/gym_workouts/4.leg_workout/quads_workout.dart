@@ -17,17 +17,17 @@ class QuadsScreen extends StatelessWidget {
             QuadsTile(
               title: 'Hack Squat',
               description: '4 x 12 reps',
-              assetPath: 'assets/img/arm/HackSquat.gif',
+              assetPath: 'assets/img/leg/HackSquat.gif',
             ),
             QuadsTile(
               title: 'Leg Extension',
               description: '4 x 12 reps',
-              assetPath: 'assets/img/arm/legext.gif',
+              assetPath: 'assets/img/leg/legext.gif',
             ),
             QuadsTile(
               title: 'Leg Press',
               description: '4 x 12 reps',
-              assetPath: 'assets/img/arm/legpress.gif',
+              assetPath: 'assets/img/leg/legpress.gif',
             ),
           ],
         ),

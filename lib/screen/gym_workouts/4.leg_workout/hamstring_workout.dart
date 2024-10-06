@@ -17,17 +17,17 @@ class HamstringScreen extends StatelessWidget {
             HamstringTile(
               title: 'Bulgarian Split Squats',
               description: '4 x 12 reps',
-               assetPath: 'assets/img/arm/bulgsquat.gif',
+              assetPath: 'assets/img/leg/bulgsquat.gif',
             ),
             HamstringTile(
               title: 'Seated Hamstring curls',
               description: '4 x 12 reps',
-               assetPath: 'assets/img/arm/SeatedLegCurl.gif',
+              assetPath: 'assets/img/leg/SeatedLegCurl.gif',
             ),
             HamstringTile(
               title: 'Prone Leg Curls',
               description: '4 x 12 reps',
-               assetPath: 'assets/img/arm/ProneLegCurl.gif',
+              assetPath: 'assets/img/leg/ProneLegCurl.gif',
             ),
           ],
         ),
@@ -48,7 +48,7 @@ class HamstringTile extends StatelessWidget {
     required this.assetPath,
   });
 
- @override
+  @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,

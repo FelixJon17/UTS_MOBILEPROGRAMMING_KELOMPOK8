@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/img/muscle.png',
+              'assets/img/logo/muscle.png',
               width: 24,
               height: 24,
             ),
@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/img/protein.png',
+              'assets/img/logo/protein.png',
               width: 24,
               height: 24,
             ),
@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/img/bmi.png',
+              'assets/img/logo/bmi.png',
               width: 24,
               height: 24,
             ),
@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/img/bulb.png',
+              'assets/img/logo/bulb.png',
               width: 24,
               height: 24,
             ),
@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/img/profile.png',
+              'assets/img/logo/profile.png',
               width: 24,
               height: 24,
             ),

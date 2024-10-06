@@ -87,7 +87,7 @@ class HomeFeatureTile extends StatelessWidget {
                       10), // Membuat sudut gambar melengkung
                 ),
                 child: Image.asset(
-                  'assets/img/leg/leg.png', // Path gambar
+                  'assets/img/logo/leg.png', // Path gambar
                   fit: BoxFit.cover, // Agar gambar memenuhi container
                 ),
               ),

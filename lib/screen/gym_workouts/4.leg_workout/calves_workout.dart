@@ -17,17 +17,17 @@ class CalvesScreen extends StatelessWidget {
             CalvesTile(
               title: 'Seated Calf Raise',
               description: '4 x 12 reps',
-               assetPath: 'assets/img/arm/scalfraise.gif',
+              assetPath: 'assets/img/leg/scalfraise.gif',
             ),
             CalvesTile(
               title: 'Single-Leg Calf Raise',
               description: '4 x 12 reps',
-              assetPath: 'assets/img/arm/legcalfraise.gif',
+              assetPath: 'assets/img/leg/legcalfraise.gif',
             ),
             CalvesTile(
               title: 'Front Squat Bar',
               description: '4 x 12 reps',
-               assetPath: 'assets/img/arm/frontsquat.gif',
+              assetPath: 'assets/img/leg/frontsquat.gif',
             ),
           ],
         ),
@@ -45,7 +45,7 @@ class CalvesTile extends StatelessWidget {
     super.key,
     required this.title,
     required this.description,
-     required this.assetPath,
+    required this.assetPath,
   });
 
   @override
@@ -92,4 +92,3 @@ class CalvesTile extends StatelessWidget {
     );
   }
 }
-

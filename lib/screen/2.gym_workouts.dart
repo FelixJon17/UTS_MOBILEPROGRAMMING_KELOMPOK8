@@ -33,7 +33,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
           children: [
             HomeFeatureTile(
               icon: Image.asset(
-                'assets/img/chest/chest.png',
+                'assets/img/logo/chest.png',
                 width: 100,
                 height: 100,
               ),
@@ -51,7 +51,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
             ),
             HomeFeatureTile(
               icon: Image.asset(
-                'assets/img/back/back.png',
+                'assets/img/logo/back.png',
                 width: 100,
                 height: 100,
               ),
@@ -69,7 +69,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
             ),
             HomeFeatureTile(
               icon: Image.asset(
-                'assets/img/arm/arm.png',
+                'assets/img/logo/arm.png',
                 width: 100,
                 height: 100,
               ),
@@ -87,7 +87,7 @@ class GymWorkoutsScreenState extends State<GymWorkoutsScreen> {
             ),
             HomeFeatureTile(
               icon: Image.asset(
-                'assets/img/leg/leg.png',
+                'assets/img/logo/leg.png',
                 width: 100,
                 height: 100,
               ),
