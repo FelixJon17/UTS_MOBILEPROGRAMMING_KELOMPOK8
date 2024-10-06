@@ -8,26 +8,45 @@ class JoggingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Column(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Jogging',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          Image.asset(
+            'assets/img/cardio/Jogging.jpg',
+            width: 80,
+            height: 80,
           ),
-          const SizedBox(height: 8),
-          const Text('Jogging is a good daily cardio exercise that is less intense than running.'),
-          const SizedBox(height: 8),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const LearnMoreJoggingScreen(),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Jogging',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
-              );
-            },
-            child: const Text('Learn More'),
+                const SizedBox(height: 8),
+                const Text(
+                    'Jogging is a good daily cardio exercise that is less intense than running.'),
+                const SizedBox(height: 8),
+                const Text(
+                    '- Recommended Duration: 20-30 minutes, 5 times per week.\n'
+                    '- Best Posture: Keep your chest lifted and land mid-foot to reduce impact.\n'
+                    '- Tip: Start at a slow pace and gradually increase speed to improve stamina.'),
+                const SizedBox(height: 8),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LearnMoreJoggingScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text('Learn More'),
+                ),
+              ],
+            ),
           ),
         ],
       ),

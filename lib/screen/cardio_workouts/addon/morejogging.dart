@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
 
 class LearnMoreJoggingScreen extends StatelessWidget {
   const LearnMoreJoggingScreen({super.key});
@@ -10,27 +12,73 @@ class LearnMoreJoggingScreen extends StatelessWidget {
         title: const Text('Learn More: Jogging'),
         backgroundColor: Colors.blueAccent,
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            Expanded(
+              child: SizedBox(
+                height: 300,
+                child: FlutterMap(
+                  options: MapOptions(
+                    center: LatLng(-6.2146, 106.8451),
+                    zoom: 13.0,
+                  ),
+                  children: [
+                    TileLayer(
+                      urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                      subdomains: ['a', 'b', 'c'],
+                    ),
+                    MarkerLayer(
+                      markers: [
+                        Marker(
+                          point: LatLng(-6.1751, 106.8272), // Monas Park, Jakarta
+                          builder: (ctx) => const Icon(
+                            Icons.location_on,
+                            color: Colors.red,
+                            size: 30,
+                          ),
+                        ),
+                        Marker(
+                          point: LatLng(-6.3017, 106.8956), // Taman Mini Indonesia, Jakarta
+                          builder: (ctx) => const Icon(
+                            Icons.location_on,
+                            color: Colors.red,
+                            size: 30,
+                          ),
+                        ),
+                        Marker(
+                          point: LatLng(-6.9175, 107.6191), // Bandung
+                          builder: (ctx) => const Icon(
+                            Icons.location_on,
+                            color: Colors.red,
+                            size: 30,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            const Text(
               'Recommended Jogging Routine:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
-            Text('- 20-30 minutes of jogging, 5 times a week.'),
-            Text('- Focus on endurance, maintain a slow pace.'),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 10),
+            const Text('- 20-30 minutes of jogging, 5 times a week.'),
+            const Text('- Focus on endurance, maintain a slow pace.'),
+            const SizedBox(height: 20),
+            const Text(
               'Popular Jogging Places in Indonesia:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
-            Text('- Monas Park, Jakarta'),
-            Text('- Taman Mini Indonesia, Jakarta'),
-            Text('- Car Free Day in Bandung and Surabaya'),
+            const SizedBox(height: 10),
+            const Text('- Monas Park, Jakarta'),
+            const Text('- Taman Mini Indonesia, Jakarta'),
+            const Text('- Car Free Day in Bandung and Surabaya'),
           ],
         ),
       ),

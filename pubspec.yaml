@@ -45,6 +45,8 @@ dependencies:
   firebase_core: ^3.6.0
   cloud_firestore: ^5.4.4
   firebase_auth: ^5.3.1
+  flutter_map: ^4.0.0
+  latlong2: ^0.8.0
 
 dev_dependencies:
   flutter_test:
@@ -148,6 +150,9 @@ flutter:
     - assets/img/arm/legcalfraise.gif
     - assets/img/arm/ProneLegCurl.gif
     - assets/img/arm/scalfraise.gif
+    - assets/img/cardio/Cycling.png
+    - assets/img/cardio/Jogging.jpg
+    - assets/img/cardio/Running.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
