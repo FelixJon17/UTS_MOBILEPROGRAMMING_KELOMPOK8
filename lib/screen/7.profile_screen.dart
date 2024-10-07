@@ -12,47 +12,49 @@ class UserProfileScreen extends StatefulWidget {
 class _UserProfileScreenState extends State<UserProfileScreen> {
   String? _username;
   String? _email;
-  String? _nickname; //belum digunakan
-  int? _age; //belum digunakan
-  double? _height; //belum digunakan
-  double? _weight; //belum digunakan
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _usernameController = TextEditingController();
 
-  final TextEditingController _nicknameController = TextEditingController();
-  final TextEditingController _ageController = TextEditingController();
-  final TextEditingController _heightController = TextEditingController();
-  final TextEditingController _weightController = TextEditingController();
-
-  bool _isProfileUpdated = false;
-
+  // Load user data
   Future<void> _loadUserData() async {
     final User? user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
       final uid = user.uid;
       DocumentSnapshot userDoc =
-          await FirebaseFirestore.instance.collection('/users').doc(uid).get();
+          await FirebaseFirestore.instance.collection('users').doc(uid).get();
 
       setState(() {
         _username = userDoc['username'];
         _email = userDoc['email'];
+        _usernameController.text = _username ?? '';
       });
     }
   }
 
-  void _saveUserDataLocally() {
-    setState(() {
-      _nickname = _nicknameController.text;
-      _age = int.tryParse(_ageController.text);
-      _height = double.tryParse(_heightController.text);
-      _weight = double.tryParse(_weightController.text);
-
-      _isProfileUpdated = true;
-    });
+  // Save updated username
+  Future<void> _updateUsername() async {
+    if (_formKey.currentState?.validate() ?? false) {
+      final User? user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        final uid = user.uid;
+        await FirebaseFirestore.instance.collection('users').doc(uid).update({
+          'username': _usernameController.text.trim(),
+        });
+        setState(() {
+          _username = _usernameController.text.trim();
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Username updated successfully')),
+        );
+      }
+    }
   }
 
   // Logout user
   Future<void> _logout() async {
     await FirebaseAuth.instance.signOut();
+    // Navigate back to the login screen (or landing page)
     Navigator.of(context).pop();
   }
 
@@ -60,6 +62,12 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   void initState() {
     super.initState();
     _loadUserData();
+  }
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    super.dispose();
   }
 
   @override
@@ -73,117 +81,54 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Card(
-                  elevation: 4,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Username: ${_username ?? 'Loading...'}',
-                          style: const TextStyle(fontSize: 18),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Card(
+                elevation: 4,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Form(
+                        key: _formKey,
+                        child: Column(
+                          children: [
+                            TextFormField(
+                              controller: _usernameController,
+                              decoration: const InputDecoration(
+                                labelText: 'Username',
+                              ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter a username';
+                                }
+                                return null;
+                              },
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              'Email: ${_email ?? 'Loading...'}',
+                              style: const TextStyle(fontSize: 18),
+                            ),
+                          ],
                         ),
-                        const SizedBox(height: 10),
-                        Text(
-                          'Email: ${_email ?? 'Loading...'}',
-                          style: const TextStyle(fontSize: 18),
-                        ),
-                        const SizedBox(height: 10),
-                        _buildTextField(
-                          controller: _nicknameController,
-                          label: 'Nickname',
-                        ),
-                        _buildTextField(
-                          controller: _ageController,
-                          label: 'Age',
-                          keyboardType: TextInputType.number,
-                        ),
-                        _buildTextField(
-                          controller: _heightController,
-                          label: 'Height (cm)',
-                          keyboardType: TextInputType.number,
-                        ),
-                        _buildTextField(
-                          controller: _weightController,
-                          label: 'Weight (kg)',
-                          keyboardType: TextInputType.number,
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: _saveUserDataLocally,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.lightBlueAccent,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 40, vertical: 15),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      side: const BorderSide(color: Colors.lightBlueAccent),
-                    ),
-                  ),
-                  child: const Text(
-                    'Save',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: _logout,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.redAccent,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 40, vertical: 15),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      side: const BorderSide(color: Colors.redAccent),
-                    ),
-                  ),
-                  child: const Text(
-                    'Logout',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                if (_isProfileUpdated)
-                  const Text(
-                    'Profile updated!',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.green,
-                    ),
-                  ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTextField({
-    required TextEditingController controller,
-    required String label,
-    TextInputType keyboardType = TextInputType.text,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: TextField(
-        controller: controller,
-        keyboardType: keyboardType,
-        decoration: InputDecoration(
-          labelText: label,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _updateUsername,
+                child: const Text('Save Changes'),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _logout,
+                child: const Text('Logout'),
+              ),
+            ],
           ),
         ),
       ),
