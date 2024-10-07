@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget {
         } catch (e) {
           // Handle error
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Error: ${e.toString()}')),
+            SnackBar(content: Text('Invalid Input!')),
           );
         }
       } else {
